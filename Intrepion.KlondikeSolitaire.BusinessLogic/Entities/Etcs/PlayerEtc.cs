@@ -13,6 +13,10 @@ public class PlayerEtc : IEntityTypeConfiguration<Player>
             .WithMany(x => x.UpdatedPlayers)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.ApplicationUser)
+            .WithOne(x => x.Player)
+            .HasForeignKey<ApplicationUser>(x => x.PlayerId)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
