@@ -1,10 +1,10 @@
-﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PlayerGrid;
 
 // Interface for filtering.
-public interface IEntityNamePlaceholderFilters
+public interface IPlayerFilters
 {
-    // The EntityNamePlaceholderFilterColumns being filtered on.
-    EntityNamePlaceholderFilterColumns FilterColumn { get; set; }
+    // The PlayerFilterColumns being filtered on.
+    PlayerFilterColumns FilterColumn { get; set; }
 
     // Loading indicator.
     bool Loading { get; set; }
@@ -18,6 +18,6 @@ public interface IEntityNamePlaceholderFilters
     // Gets or sets a value indicating if the sort is ascending or descending.
     bool SortAscending { get; set; }
 
-    // The EntityNamePlaceholderFilterColumns being sorted.
-    EntityNamePlaceholderFilterColumns SortColumn { get; set; }
+    // The PlayerFilterColumns being sorted.
+    PlayerFilterColumns SortColumn { get; set; }
 }
