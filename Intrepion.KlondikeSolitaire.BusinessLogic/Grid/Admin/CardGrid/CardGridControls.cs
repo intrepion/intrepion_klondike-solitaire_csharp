@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardGrid;
 
 // State of grid filters.
 public class CardGridControls(IPageHelper pageHelper) : ICardFilters

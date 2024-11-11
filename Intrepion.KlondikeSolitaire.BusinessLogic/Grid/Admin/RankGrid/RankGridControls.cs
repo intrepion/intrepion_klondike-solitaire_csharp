@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.RankGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.RankGrid;
 
 // State of grid filters.
 public class RankGridControls(IPageHelper pageHelper) : IRankFilters

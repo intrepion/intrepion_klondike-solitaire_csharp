@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.SuitGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.SuitGrid;
 
 // State of grid filters.
 public class SuitGridControls(IPageHelper pageHelper) : ISuitFilters

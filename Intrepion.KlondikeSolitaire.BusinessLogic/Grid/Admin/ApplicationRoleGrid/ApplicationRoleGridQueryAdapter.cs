@@ -1,7 +1,7 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationRoleGrid;
 
