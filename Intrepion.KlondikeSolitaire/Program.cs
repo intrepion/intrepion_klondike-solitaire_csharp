@@ -86,6 +86,9 @@ builder.Services.AddScoped<PlayerGridQueryAdapter>();
 builder.Services.AddScoped<IRankFilters, RankGridControls>();
 builder.Services.AddScoped<RankGridQueryAdapter>();
 
+builder.Services.AddScoped<ISuitFilters, SuitGridControls>();
+builder.Services.AddScoped<SuitGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
