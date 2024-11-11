@@ -1,10 +1,10 @@
-@inject IEntityNamePlaceholderFilters Filters
+@inject ISuitFilters Filters
 
-@if (CurrentEntityNamePlaceholder is not null)
+@if (CurrentSuit is not null)
 {
-    <div class="row EntityNamePlaceholder-detail">
+    <div class="row Suit-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentEntityNamePlaceholder.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentSuit.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -22,7 +22,7 @@
         <div class="col-3">
             <a href="@ViewLink" alt="View Details"
                title="View Details">
-                @CurrentEntityNamePlaceholder.Id
+                @CurrentSuit.Id
             </a>
         </div>
 
@@ -40,18 +40,18 @@
 }
 
 @code {
-    private EntityNamePlaceholder _currentEntityNamePlaceholder = new EntityNamePlaceholder();
+    private Suit _currentSuit = new Suit();
 
-    // EntityNamePlaceholder being rendered.
+    // Suit being rendered.
     [Parameter]
-    public EntityNamePlaceholder CurrentEntityNamePlaceholder
+    public Suit CurrentSuit
     {
-        get => _currentEntityNamePlaceholder;
+        get => _currentSuit;
         set
         {
-            if (value is not null && !value.Equals(_currentEntityNamePlaceholder))
+            if (value is not null && !value.Equals(_currentSuit))
             {
-                _currentEntityNamePlaceholder = value;
+                _currentSuit = value;
                 DeleteConfirmation = false;
             }
         }
@@ -59,7 +59,7 @@
 
     // Event to raise when a HumanNamePlaceholder delete is requested.
     [Parameter]
-    public EventCallback DeleteEntityNamePlaceholder { get; set; }
+    public EventCallback DeleteSuit { get; set; }
 
     // Overall wrapper of functionality.
     [CascadingParameter]
@@ -67,10 +67,10 @@
 
     // Returns True if conditions for delete are met.
     private bool CanDelete =>
-        !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentEntityNamePlaceholder?.Id) == true);
+        !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentSuit?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentEntityNamePlaceholder?.Id}";
+    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentSuit?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
@@ -100,10 +100,10 @@
         if (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true)
         {
             DeleteConfirmation = true;
-            await Wrapper.DeleteRequested.InvokeAsync(CurrentEntityNamePlaceholder.Id);
+            await Wrapper.DeleteRequested.InvokeAsync(CurrentSuit.Id);
         }
     }
 
-    // Deletes the EntityNamePlaceholder.
-    private Task DeleteAsync() => DeleteEntityNamePlaceholder.InvokeAsync(this);
+    // Deletes the Suit.
+    private Task DeleteAsync() => DeleteSuit.InvokeAsync(this);
 }
