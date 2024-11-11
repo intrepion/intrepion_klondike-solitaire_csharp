@@ -107,6 +107,7 @@ ApplicationUserRole }o--|| ApplicationUser
 ApplicationUserToken }o--|| ApplicationUser
 
 Card }o--|| ApplicationUser
+Card }o--|| Rank
 ' RelationshipCodePlaceholder
 
 @enduml
