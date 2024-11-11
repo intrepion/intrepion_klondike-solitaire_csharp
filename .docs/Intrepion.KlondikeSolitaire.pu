@@ -120,6 +120,7 @@ entity Rank {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    Cards : ICollection<Rank>
     ' RankKeyCodePlaceholder
     --
     ' RankPropertyCodePlaceholder
