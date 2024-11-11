@@ -30,6 +30,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new GameEtc().Configure(builder.Entity<Game>());
         new PlayerEtc().Configure(builder.Entity<Player>());
         new RankEtc().Configure(builder.Entity<Rank>());
+        new SuitEtc().Configure(builder.Entity<Suit>());
         // EntityTypeCfgCodePlaceholder
     }
 }
