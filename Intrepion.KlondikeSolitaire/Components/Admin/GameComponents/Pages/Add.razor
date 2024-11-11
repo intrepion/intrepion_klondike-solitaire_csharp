@@ -4,7 +4,7 @@
 @inject NavigationManager Navigation
 @inject IPageHelper PageHelper
 
-<PageTitle>HumanNamePlaceholder Add</PageTitle>
+<PageTitle>Game Add</PageTitle>
 
 @if (Game is not null)
 {
@@ -18,13 +18,13 @@
 @if (Success)
 {
     <br />
-    <div class="alert alert-success">The HumanNamePlaceholder was successfully added.</div>
+    <div class="alert alert-success">The Game was successfully added.</div>
 }
 
 @if (Error)
 {
     <br />
-    <div class="alert alert-danger">Failed to add the HumanNamePlaceholder (@ErrorMessage).</div>
+    <div class="alert alert-danger">Failed to add the Game (@ErrorMessage).</div>
 }
 
 @code {
