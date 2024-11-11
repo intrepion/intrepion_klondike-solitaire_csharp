@@ -21,5 +21,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public Player? Player { get; set; }
     public Guid? PlayerId { get; set; }
     public ICollection<Rank> UpdatedRanks { get; set; } = [];
+    public ICollection<Suit> UpdatedSuits { get; set; } = [];
     // ActualPropertyPlaceholder
 }
