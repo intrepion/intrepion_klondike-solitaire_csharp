@@ -25,6 +25,7 @@ entity ApplicationUser {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    Player : Player
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
