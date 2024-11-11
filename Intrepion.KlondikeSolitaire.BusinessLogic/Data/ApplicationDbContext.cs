@@ -26,6 +26,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 
         new CardEtc().Configure(builder.Entity<Card>());
         new GameEtc().Configure(builder.Entity<Game>());
+        new PlayerEtc().Configure(builder.Entity<Player>());
         // EntityTypeCfgCodePlaceholder
     }
 }
