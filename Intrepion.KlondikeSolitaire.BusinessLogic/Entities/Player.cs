@@ -8,5 +8,6 @@ public class Player
     public Guid Id { get; set; }
 
     public ApplicationUser? ApplicationUser { get; set; }
+    public ICollection<Game> Games { get; set; } = [];
     // ActualPropertyPlaceholder
 }
