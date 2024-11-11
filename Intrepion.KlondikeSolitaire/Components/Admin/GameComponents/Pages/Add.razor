@@ -1,4 +1,4 @@
-@page "/admin/UrlNamePlaceholder/add"
+@page "/admin/game/add"
 @rendermode InteractiveServer
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
 @inject NavigationManager Navigation
@@ -79,7 +79,7 @@
             Success = true;
             Error = false;
 
-            Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{Game?.Id}");
+            Navigation.NavigateTo($"/admin/game/view/{Game?.Id}");
         }
         catch (Exception ex)
         {
@@ -91,5 +91,5 @@
     }
 
     // Back to list.
-    private void Cancel() => Navigation.NavigateTo($"/admin/UrlNamePlaceholder/{PageHelper.Page}");
+    private void Cancel() => Navigation.NavigateTo($"/admin/game/{PageHelper.Page}");
 }
