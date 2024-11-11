@@ -126,6 +126,15 @@ entity Rank {
     ' RankPropertyCodePlaceholder
 }
 
+entity Suit {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' SuitKeyCodePlaceholder
+    --
+    ' SuitPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
