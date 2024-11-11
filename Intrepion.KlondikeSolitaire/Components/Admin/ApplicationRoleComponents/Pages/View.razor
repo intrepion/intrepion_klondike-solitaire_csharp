@@ -1,0 +1,186 @@
+@page "/admin/application-role/view/{ApplicationRoleId:guid}"
+@rendermode InteractiveServer
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject IPageHelper PageHelper
+@inject EditSuccess EditSuccessState
+
+<PageTitle>Application Role View</PageTitle>
+
+@if (NotFound && !Loading)
+{
+    <div class="alert alert-warning">Application Role with that id doesn't exist.</div>
+}
+else
+{
+    @if (ApplicationRole is null || Loading)
+    {
+        <div class="alert alert-info">Loading...</div>
+    }
+    else
+    {
+        <h1>@ApplicationRole.Name</h1>
+        <br />
+        @if (EditSuccess)
+        {
+            <div class="alert alert-success">Successfully updated the Application Role.</div>
+        }
+        <hr />
+        <h2>Id</h2>
+        <br />
+        <h3>@ApplicationRole.Id</h3>
+        <br />
+        <h2>Name</h2>
+        <br />
+        <h3>@ApplicationRole.Name</h3>
+        <br />
+        <a class="btn btn-primary" title="Go Back" href="admin/application-role/@PageHelper.Page">
+            Back to Grid
+        </a>
+        <span>&nbsp;</span>
+        @if (!Deleted)
+        {
+            <a class="btn btn-primary" href="admin/application-role/edit/@ApplicationRole.Id" title="Edit">Edit</a>
+
+            <span>&nbsp;</span>
+            @if (!ShowConfirmation)
+            {
+                <button class="btn btn-danger" @onclick="@(() => { ShowConfirmation = true; EditSuccess = false; })">Delete</button>
+            }
+            else
+            {
+                <br />
+                <br />
+                <DeletePrompt Confirmation="@(async result => await ConfirmAsync(result))" />
+            }
+        }
+        else
+        {
+            <div class="btn btn-danger">🚫 This item has been deleted.</div>
+        }
+    }
+}
+
+@code {
+    // Tracking of asynchronous calls.
+    private bool Loading;
+
+    // Id from route of Application Role.
+    [Parameter]
+    public Guid ApplicationRoleId { get; set; }
+
+    // Navigation check.
+    private Guid _lastApplicationRoleId;
+
+    // True with redirect from successful edit.
+    [Parameter]
+    public bool EditSuccess { get; set; }
+
+    // ApplicationRole entity.
+    private ApplicationRole? ApplicationRole { get; set; }
+
+    // Set to true when not found.
+    private bool NotFound = false;
+
+    // Set to true when delete is requested.
+    private bool ShowConfirmation = false;
+
+    // Set to true when delete is successful.
+    private bool Deleted = false;
+
+    // Navigated
+    protected override async Task OnParametersSetAsync()
+    {
+        if (_lastApplicationRoleId != ApplicationRoleId)
+        {
+            EditSuccess = EditSuccessState.Success;
+            EditSuccessState.Success = false;
+            _lastApplicationRoleId = ApplicationRoleId;
+            await LoadApplicationRoleAsync();
+        }
+    }
+
+    // Confirm deletion.
+    // result is True when user confirmed.
+    private async Task ConfirmAsync(bool result)
+    {
+        if (result)
+        {
+            await DeleteAsync();
+        }
+        else
+        {
+            ShowConfirmation = false;
+            EditSuccess = false;
+        }
+    }
+
+    // Loads the Application Role.
+    private async Task LoadApplicationRoleAsync()
+    {
+        if (Loading)
+        {
+            return; //avoid concurrent requests.
+        }
+
+        NotFound = false;
+        ApplicationRole = null;
+
+        Loading = true;
+
+        using var context = DbFactory.CreateDbContext();
+
+        if (context.Roles is not null)
+        {
+            ApplicationRole = await context.Roles
+                .AsNoTracking()
+                .SingleOrDefaultAsync(
+                    c => c.Id == ApplicationRoleId);
+
+            if (ApplicationRole is null)
+            {
+                NotFound = true;
+            }
+        }
+
+        Loading = false;
+    }
+
+    // Deletes the Application Role.
+    private async Task DeleteAsync()
+    {
+        if (Loading)
+        {
+            // Avoid concurrent requests.
+            return;
+        }
+
+        Loading = true;
+        using var context = DbFactory?.CreateDbContext();
+
+        if (context?.Roles is not null)
+        {
+            var applicationRole = await context.Roles
+                .SingleOrDefaultAsync(c => c.Id == ApplicationRoleId);
+
+            if (applicationRole is not null)
+            {
+                context.Roles?.Remove(applicationRole);
+                await context.SaveChangesAsync();
+                Loading = false;
+                Deleted = true;
+            }
+            else
+            {
+                Loading = false;
+                // Show not found.
+                await LoadApplicationRoleAsync();
+            }
+        }
+        else
+        {
+            Loading = false;
+            // Show not found.
+            await LoadApplicationRoleAsync();
+        }
+    }
+}

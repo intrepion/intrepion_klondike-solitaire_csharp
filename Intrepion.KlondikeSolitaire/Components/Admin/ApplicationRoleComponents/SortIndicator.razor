@@ -1,0 +1,19 @@
+﻿@inject IApplicationRoleFilters Filters
+
+@if (Column == Filters.SortColumn)
+{
+    <span>@SortSymbol</span>
+}
+else
+{
+    <span>&nbsp;</span>
+}
+
+@code {
+    // Sets which ApplicationRoleFilterColumns this indicator is for.
+    [Parameter]
+    public ApplicationRoleFilterColumns Column { get; set; }
+
+    // The symbol to render.
+    private string SortSymbol => Filters.SortAscending ? "🔼" : "🔽";
+}

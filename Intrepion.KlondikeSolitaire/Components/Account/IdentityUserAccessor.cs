@@ -1,7 +1,7 @@
-﻿using Intrepion.KlondikeSolitaire.Data;
+﻿using ApplicationNamePlaceholder.BusinessLogic.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Intrepion.KlondikeSolitaire.Components.Account;
+namespace ApplicationNamePlaceholder.Components.Account;
 
 internal sealed class IdentityUserAccessor(UserManager<ApplicationUser> userManager, IdentityRedirectManager redirectManager)
 {

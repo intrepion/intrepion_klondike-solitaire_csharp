@@ -1,0 +1,196 @@
+@page "/admin/application-role/edit/{ApplicationRoleId:guid}"
+@rendermode InteractiveServer
+@implements IDisposable
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager Navigation
+@inject IPageHelper PageHelper
+@inject EditSuccess EditSuccessState
+
+<PageTitle>Application Role Edit</PageTitle>
+
+@if (ApplicationRole is null && !Busy)
+{
+    <p>Could not find Application Role with id @ApplicationRoleId.</p>
+}
+else
+{
+    <ApplicationRoleForm Busy="Busy" 
+                 ApplicationRole="ApplicationRole" 
+                 DbApplicationRole="DbApplicationRole" 
+                 IsAdd="false" 
+                 CancelRequest="Cancel" 
+                 ValidationResult="@(async (success) => await ValidationResultAsync(success))" />
+}
+@if (ConcurrencyError)
+{
+    <br />
+    <div class="alert alert-danger">
+        <p>
+            The Application Role details have changed since it was last loaded. The updated fields are highlighted in the form.
+            Please choose an option:
+        </p>
+        <p><b>Cancel</b> to lose your changes and keep the database version.</p>
+        <p><b>Submit</b> to force an update with your version.</p>
+    </div>
+}
+@if (Error)
+{
+    <br />
+    <div class="alert alert-danger">Failed to update the Application Role (@ErrorMessage).</div>
+}
+
+@code {
+    /// <summary>
+    /// Id of Application Role to edit
+    /// </summary>
+    [Parameter]
+    public Guid ApplicationRoleId { get; set; }
+
+    /// <summary>
+    /// The <see cref="ApplicationDbContext"/> for database access.
+    /// </summary>
+    private ApplicationDbContext? Context { get; set; }
+
+    /// <summary>
+    /// ApplicationRole being edited
+    /// </summary>
+    private ApplicationRole ApplicationRole { get; set; } = new ApplicationRole();
+
+    /// <summary>
+    /// Database version when concurrency issues exist
+    /// </summary>
+    private ApplicationRole DbApplicationRole { get; set; } = new ApplicationRole();
+
+    /// <summary>
+    /// Avoid concurrent requests
+    /// </summary>
+    private bool Busy;
+
+    /// <summary>
+    /// An error occurred in the update
+    /// </summary>
+    private bool Error;
+
+    /// <summary>
+    /// A concurrency error needs resolution
+    /// </summary>
+    private bool ConcurrencyError;
+
+    /// <summary>
+    /// Error message
+    /// </summary>
+    private string ErrorMessage = string.Empty;
+
+    /// <summary>
+    /// Start it up
+    /// </summary>
+    /// <returns>Task</returns>
+    // <snippet2>
+    protected override async Task OnInitializedAsync()
+    {
+        Busy = true;
+
+        try
+        {
+            Context = DbFactory.CreateDbContext();
+
+            if (Context is not null && Context.Roles is not null)
+            {
+                var applicationRole = await Context.Roles.SingleOrDefaultAsync(c => c.Id == ApplicationRoleId);
+
+                if (applicationRole is not null)
+                {
+                    ApplicationRole = applicationRole;
+                }
+            }
+        }
+        finally
+        {
+            Busy = false;
+        }
+    }
+    // </snippet2>
+
+    /// <summary>
+    /// Result of form validation
+    /// </summary>
+    /// <param name="success">Success when model is valid</param>
+    /// <returns>Task</returns>
+    private async Task ValidationResultAsync(bool success)
+    {
+        if (Busy)
+        {
+            return;
+        }
+
+        if (!success)
+        {
+            // still need to edit model
+            Error = false;
+            ConcurrencyError = false;
+            return;
+        }
+
+        Busy = true; // async
+        try
+        {
+            if (Context is not null)
+            {
+                await Context.SaveChangesAsync();
+            }
+
+            EditSuccessState.Success = true;
+            // go to view to see the record
+            Navigation.NavigateTo($"/admin/application-role/view/{ApplicationRole.Id}");
+        }
+        catch (DbUpdateConcurrencyException dbex)
+        {
+            EditSuccessState.Success = false;
+
+            // concurrency issues!
+            ConcurrencyError = true;
+
+            // get values from database
+            var dbValues = dbex.Entries[0].GetDatabaseValues();
+
+            if (dbValues is null)
+            {
+                // deleted - show Application Role not found
+                Navigation.NavigateTo($"/admin/application-role/view/{ApplicationRole.Id}");
+                return;
+            }
+
+            // bind to show labels on form
+            DbApplicationRole = (ApplicationRole)dbValues.ToObject();
+
+            // move to original so second submit works (unless there is another concurrent edit)
+            dbex.Entries[0].OriginalValues.SetValues(dbValues);
+            Error = false;
+            Busy = false;
+        }
+        catch (Exception ex)
+        {
+            EditSuccessState.Success = false;
+            // unknown exception
+            Error = true;
+            ErrorMessage = ex.Message;
+            Busy = false;
+        }
+    }
+
+    /// <summary>
+    /// Bail out!
+    /// </summary>
+    private void Cancel()
+    {
+        Busy = true;
+        Navigation.NavigateTo($"/admin/application-role/{PageHelper.Page}");
+    }
+
+    /// <summary>
+    /// Implement <see cref="IDisposable"/>.
+    /// </summary>
+    // <snippet1>
+    public void Dispose() => Context?.Dispose();
+    // </snippet1>
+}
