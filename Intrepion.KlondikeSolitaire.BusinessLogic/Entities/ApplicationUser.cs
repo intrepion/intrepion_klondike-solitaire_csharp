@@ -15,5 +15,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<ApplicationUserRole> UpdatedApplicationUserRoles { get; set; } = [];
     public ICollection<ApplicationUserToken> UpdatedApplicationUserTokens { get; set; } = [];
 
+    public ICollection<Card> UpdatedCards { get; set; } = [];
     // ActualPropertyPlaceholder
 }
