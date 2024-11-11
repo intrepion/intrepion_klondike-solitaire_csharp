@@ -7,5 +7,6 @@ public class Card
     public ApplicationUser? ApplicationUserUpdatedBy { get; set; }
     public Guid Id { get; set; }
 
+    public Rank? Rank { get; set; }
     // ActualPropertyPlaceholder
 }
