@@ -1,0 +1,19 @@
+﻿@inject IEntityNamePlaceholderFilters Filters
+
+@if (Column == Filters.SortColumn)
+{
+    <span>@SortSymbol</span>
+}
+else
+{
+    <span>&nbsp;</span>
+}
+
+@code {
+    // Sets which EntityNamePlaceholderFilterColumns this indicator is for.
+    [Parameter]
+    public EntityNamePlaceholderFilterColumns Column { get; set; }
+
+    // The symbol to render.
+    private string SortSymbol => Filters.SortAscending ? "🔼" : "🔽";
+}
