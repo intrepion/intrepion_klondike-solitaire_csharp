@@ -104,6 +104,15 @@ entity Game {
     ' GamePropertyCodePlaceholder
 }
 
+entity Player {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' PlayerKeyCodePlaceholder
+    --
+    ' PlayerPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
