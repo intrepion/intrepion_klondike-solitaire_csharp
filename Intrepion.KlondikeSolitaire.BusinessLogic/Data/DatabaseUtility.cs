@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Data;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Data;
 
 public static class DatabaseUtility
 {

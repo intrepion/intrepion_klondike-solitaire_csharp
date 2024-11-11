@@ -1,4 +1,4 @@
-﻿namespace ApplicationNamePlaceholder.BusinessLogic.Data;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Data;
 
 // Service to communicate success status between pages.
 public class EditSuccess
