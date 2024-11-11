@@ -6,10 +6,10 @@
 
 <PageTitle>HumanNamePlaceholder Add</PageTitle>
 
-@if (EntityNamePlaceholder is not null)
+@if (Game is not null)
 {
-    <EntityNamePlaceholderForm Busy="Busy" 
-                 EntityNamePlaceholder="EntityNamePlaceholder" 
+    <GameForm Busy="Busy" 
+                 Game="Game" 
                  IsAdd="true"
                  CancelRequest="Cancel"
                  ValidationResult="@(async (success) => await ValidationResultAsync(success))" />
@@ -28,7 +28,7 @@
 }
 
 @code {
-    private EntityNamePlaceholder? EntityNamePlaceholder { get; set; }
+    private Game? Game { get; set; }
 
     // True when an asynchronous operation is running.
     private bool Busy;
@@ -41,10 +41,10 @@
 
     private string ErrorMessage = string.Empty;
 
-    // Start with fresh EntityNamePlaceholder.
+    // Start with fresh Game.
     protected override void OnInitialized()
     {
-        EntityNamePlaceholder = new();
+        Game = new();
     }
 
     // Respond to a forms submission.
@@ -68,9 +68,9 @@
         using var context = DbFactory.CreateDbContext();
 
         // This just attaches.
-        if (EntityNamePlaceholder is not null)
+        if (Game is not null)
         {
-            context.TableNamePlaceholder?.Add(EntityNamePlaceholder);
+            context.TableNamePlaceholder?.Add(Game);
         }
 
         try
@@ -79,7 +79,7 @@
             Success = true;
             Error = false;
 
-            Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{EntityNamePlaceholder?.Id}");
+            Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{Game?.Id}");
         }
         catch (Exception ex)
         {
