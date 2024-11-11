@@ -14,7 +14,7 @@ public partial class CardAdminPages : PageTest
         var faker = new Faker();
         var aRandomString = faker.Random.String2(10);
         var someRandomString = faker.Random.String2(10);
-        await Page.GetByTestId("LowercaseNamePlaceholderNavLink").ClickAsync();
+        await Page.GetByTestId("cardNavLink").ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Card Home");
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Card Add");
