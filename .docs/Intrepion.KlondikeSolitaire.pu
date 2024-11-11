@@ -94,6 +94,15 @@ entity Card {
     ' CardPropertyCodePlaceholder
 }
 
+entity Game {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' GameKeyCodePlaceholder
+    --
+    ' GamePropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
