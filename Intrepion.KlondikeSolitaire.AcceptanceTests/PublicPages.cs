@@ -2,7 +2,7 @@
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 
-namespace ApplicationNamePlaceholder.AcceptanceTests;
+namespace Intrepion.KlondikeSolitaire.AcceptanceTests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
