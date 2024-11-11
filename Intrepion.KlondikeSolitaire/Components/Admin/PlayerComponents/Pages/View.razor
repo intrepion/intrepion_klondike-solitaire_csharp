@@ -1,0 +1,186 @@
+@page "/admin/UrlNamePlaceholder/view/{EntityNamePlaceholderId:guid}"
+@rendermode InteractiveServer
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject IPageHelper PageHelper
+@inject EditSuccess EditSuccessState
+
+<PageTitle>HumanNamePlaceholder View</PageTitle>
+
+@if (NotFound && !Loading)
+{
+    <div class="alert alert-warning">HumanNamePlaceholder with that id doesn't exist.</div>
+}
+else
+{
+    @if (EntityNamePlaceholder is null || Loading)
+    {
+        <div class="alert alert-info">Loading...</div>
+    }
+    else
+    {
+        @* PageHeaderCodePlaceholder *@
+
+        <br />
+        @if (EditSuccess)
+        {
+            <div class="alert alert-success">Successfully updated the HumanNamePlaceholder.</div>
+        }
+        <hr />
+        <h2>Id</h2>
+        <br />
+        <h3>@EntityNamePlaceholder.Id</h3>
+        <br />
+
+        @* PropertyCodePlaceholder *@
+
+        <a class="btn btn-primary" title="Go Back" href="admin/UrlNamePlaceholder/@PageHelper.Page">
+            Back to Grid
+        </a>
+        <span>&nbsp;</span>
+        @if (!Deleted)
+        {
+            <a class="btn btn-primary" href="admin/UrlNamePlaceholder/edit/@EntityNamePlaceholder.Id" title="Edit">Edit</a>
+
+            <span>&nbsp;</span>
+            @if (!ShowConfirmation)
+            {
+                <button class="btn btn-danger" @onclick="@(() => { ShowConfirmation = true; EditSuccess = false; })">Delete</button>
+            }
+            else
+            {
+                <br />
+                <br />
+                <DeletePrompt Confirmation="@(async result => await ConfirmAsync(result))" />
+            }
+        }
+        else
+        {
+            <div class="btn btn-danger">🚫 This HumanNamePlaceholder has been deleted.</div>
+        }
+    }
+}
+
+@code {
+    // Tracking of asynchronous calls.
+    private bool Loading;
+
+    // Id from route of HumanNamePlaceholder.
+    [Parameter]
+    public Guid EntityNamePlaceholderId { get; set; }
+
+    // Navigation check.
+    private Guid _lastEntityNamePlaceholderId;
+
+    // True with redirect from successful edit.
+    [Parameter]
+    public bool EditSuccess { get; set; }
+
+    // EntityNamePlaceholder entity.
+    private EntityNamePlaceholder? EntityNamePlaceholder { get; set; }
+
+    // Set to true when not found.
+    private bool NotFound = false;
+
+    // Set to true when delete is requested.
+    private bool ShowConfirmation = false;
+
+    // Set to true when delete is successful.
+    private bool Deleted = false;
+
+    // Navigated
+    protected override async Task OnParametersSetAsync()
+    {
+        if (_lastEntityNamePlaceholderId != EntityNamePlaceholderId)
+        {
+            EditSuccess = EditSuccessState.Success;
+            EditSuccessState.Success = false;
+            _lastEntityNamePlaceholderId = EntityNamePlaceholderId;
+            await LoadEntityNamePlaceholderAsync();
+        }
+    }
+
+    // Confirm deletion.
+    // result is True when user confirmed.
+    private async Task ConfirmAsync(bool result)
+    {
+        if (result)
+        {
+            await DeleteAsync();
+        }
+        else
+        {
+            ShowConfirmation = false;
+            EditSuccess = false;
+        }
+    }
+
+    // Loads the HumanNamePlaceholder.
+    private async Task LoadEntityNamePlaceholderAsync()
+    {
+        if (Loading)
+        {
+            return; //avoid concurrent requests.
+        }
+
+        NotFound = false;
+        EntityNamePlaceholder = null;
+
+        Loading = true;
+
+        using var context = DbFactory.CreateDbContext();
+
+        if (context.TableNamePlaceholder is not null)
+        {
+            EntityNamePlaceholder = await context.TableNamePlaceholder
+                .AsNoTracking()
+                .SingleOrDefaultAsync(
+                    c => c.Id == EntityNamePlaceholderId);
+
+            if (EntityNamePlaceholder is null)
+            {
+                NotFound = true;
+            }
+        }
+
+        Loading = false;
+    }
+
+    // Deletes the HumanNamePlaceholder.
+    private async Task DeleteAsync()
+    {
+        if (Loading)
+        {
+            // Avoid concurrent requests.
+            return;
+        }
+
+        Loading = true;
+        using var context = DbFactory?.CreateDbContext();
+
+        if (context?.Roles is not null)
+        {
+            var LowercaseNamePlaceholder = await context.TableNamePlaceholder
+                .SingleOrDefaultAsync(c => c.Id == EntityNamePlaceholderId);
+
+            if (LowercaseNamePlaceholder is not null)
+            {
+                context.TableNamePlaceholder?.Remove(LowercaseNamePlaceholder);
+                await context.SaveChangesAsync();
+                Loading = false;
+                Deleted = true;
+            }
+            else
+            {
+                Loading = false;
+                // Show not found.
+                await LoadEntityNamePlaceholderAsync();
+            }
+        }
+        else
+        {
+            Loading = false;
+            // Show not found.
+            await LoadEntityNamePlaceholderAsync();
+        }
+    }
+}
