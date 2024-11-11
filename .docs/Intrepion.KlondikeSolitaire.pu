@@ -110,6 +110,7 @@ entity Player {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     ApplicationUser : Player
+    Games : ICollection<Player>
     ' PlayerKeyCodePlaceholder
     --
     ' PlayerPropertyCodePlaceholder
