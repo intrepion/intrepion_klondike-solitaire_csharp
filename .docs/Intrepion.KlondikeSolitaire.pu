@@ -133,6 +133,7 @@ Card }o--|| Suit
 Game }o--|| ApplicationUser
 Game }o--|| Player
 Player }o--|| ApplicationUser
+Player ||--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
