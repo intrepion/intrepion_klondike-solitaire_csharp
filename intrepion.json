@@ -1,0 +1,182 @@
+{
+  "entities": [
+    {
+      "names": {
+        "entity": "Card",
+        "human": "Card",
+        "plural": "Cards",
+        "table": "Cards",
+        "url": "card"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Rank",
+            "property": "Cards"
+          },
+          "names": {
+            "human": "Rank",
+            "property": "Rank"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Suit",
+            "property": "Cards"
+          },
+          "names": {
+            "human": "Suit",
+            "property": "Suit"
+          },
+          "type": "manyToOne"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Game",
+        "human": "Game",
+        "plural": "Games",
+        "table": "Games",
+        "url": "game"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "ApplicationUser",
+                "subproperty": "UserName"
+              }
+            ],
+            "entity": "Player",
+            "property": "Games"
+          },
+          "names": {
+            "human": "Player",
+            "property": "Player"
+          },
+          "type": "manyToOne"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Player",
+        "human": "Player",
+        "plural": "Players",
+        "table": "Players",
+        "url": "player"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "UserName"
+              }
+            ],
+            "entity": "ApplicationUser",
+            "property": "Player"
+          },
+          "names": {
+            "human": "Application User",
+            "property": "ApplicationUser"
+          },
+          "owner": true,
+          "type": "oneToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Id"
+              }
+            ],
+            "entity": "Game"
+          },
+          "names": {
+            "human": "Games",
+            "property": "Games"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Rank",
+        "human": "Rank",
+        "plural": "Ranks",
+        "table": "Ranks",
+        "url": "rank"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Id"
+              }
+            ],
+            "entity": "Card"
+          },
+          "names": {
+            "human": "Cards",
+            "property": "Cards"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Suit",
+        "human": "Suit",
+        "plural": "Suits",
+        "table": "Suits",
+        "url": "rank"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Id"
+              }
+            ],
+            "entity": "Card"
+          },
+          "names": {
+            "human": "Cards",
+            "property": "Cards"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    }
+  ],
+  "names": {
+    "human": "Intrepion Klondike Solitaire",
+    "namespace": "Intrepion.KlondikeSolitaire"
+  },
+  "version": "0.1.0"
+}
