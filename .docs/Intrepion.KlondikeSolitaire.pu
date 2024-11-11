@@ -108,6 +108,7 @@ entity Player {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    ApplicationUser : Player
     ' PlayerKeyCodePlaceholder
     --
     ' PlayerPropertyCodePlaceholder
