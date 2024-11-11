@@ -1,5 +1,5 @@
-@page "/admin/UrlNamePlaceholder"
-@page "/admin/UrlNamePlaceholder/{Page:int}"
+@page "/admin/game"
+@page "/admin/game/{Page:int}"
 @rendermode InteractiveServer
 @inject IGameFilters Filters
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
@@ -9,7 +9,7 @@
 <PageTitle>Game Home</PageTitle>
 
 <h1>Game Home</h1>
-<h6><a href="/admin/UrlNamePlaceholder/add">Create New</a></h6>
+<h6><a href="/admin/game/add">Create New</a></h6>
 
 <GridWrapper @ref="Wrapper"
              FilterChanged="ReloadAsync"
@@ -107,7 +107,7 @@
         // Ensure we're on the same (correct) page.
         if (_lastPage < 1)
         {
-            Navigation.NavigateTo("/admin/UrlNamePlaceholder/1");
+            Navigation.NavigateTo("/admin/game/1");
             return;
         }
 
@@ -116,12 +116,12 @@
         {
             if (Page < 1)
             {
-                Navigation.NavigateTo("/admin/UrlNamePlaceholder/1");
+                Navigation.NavigateTo("/admin/game/1");
                 return;
             }
             if (Page > Filters.PageHelper.PageCount)
             {
-                Navigation.NavigateTo($"/admin/UrlNamePlaceholder/{Filters.PageHelper.PageCount}");
+                Navigation.NavigateTo($"/admin/game/{Filters.PageHelper.PageCount}");
                 return;
             }
         }
