@@ -1,0 +1,1149 @@
+{
+  "entities": [
+    {
+      "names": {
+        "entity": "Card",
+        "human": "Card",
+        "plural": "Cards",
+        "table": "Cards",
+        "url": "card"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Rank",
+            "property": "Cards"
+          },
+          "names": {
+            "human": "Rank",
+            "property": "Rank"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Suit",
+            "property": "Cards"
+          },
+          "names": {
+            "human": "Suit",
+            "property": "Suit"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "entity": "CardFoundation",
+            "property": "Card"
+          },
+          "names": {
+            "human": "Card Foundations",
+            "property": "CardFoundations"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "CardStock",
+            "property": "Card"
+          },
+          "names": {
+            "human": "Card Stocks",
+            "property": "CardStocks"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "CardTableau",
+            "property": "Card"
+          },
+          "names": {
+            "human": "Card Tableaus",
+            "property": "CardTableaus"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "CardWaste",
+            "property": "Card"
+          },
+          "names": {
+            "human": "Card Wastes",
+            "property": "CardWastes"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Move",
+            "property": "Card1"
+          },
+          "names": {
+            "human": "Moves As Card1",
+            "property": "MovesAsCard1"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Move",
+            "property": "Card2"
+          },
+          "names": {
+            "human": "Moves As Card2",
+            "property": "MovesAsCard2"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Move",
+            "property": "Card3"
+          },
+          "names": {
+            "human": "Moves As Card3",
+            "property": "MovesAsCard3"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "CardFoundation",
+        "human": "Card Foundation",
+        "plural": "CardFoundations",
+        "table": "CardFoundations",
+        "url": "card-foundation"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Card",
+            "property": "CardFoundations"
+          },
+          "names": {
+            "human": "Card",
+            "property": "Card"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Foundation",
+            "property": "CardFoundations"
+          },
+          "names": {
+            "human": "Foundation",
+            "property": "Foundation"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Ordering",
+            "property": "Ordering"
+          },
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "CardStock",
+        "human": "Card Stock",
+        "plural": "CardStocks",
+        "table": "CardStocks",
+        "url": "card-stock"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Rank"
+              },
+              {
+                "ordering": 2,
+                "string": " of "
+              },
+              {
+                "ordering": 3,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Card",
+            "property": "CardStocks"
+          },
+          "names": {
+            "human": "Card",
+            "property": "CardId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "StartTime"
+              }
+            ],
+            "entity": "Game",
+            "property": "CardStocks"
+          },
+          "names": {
+            "human": "Game",
+            "property": "GameId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Puzzle",
+            "property": "CardStocks"
+          },
+          "names": {
+            "human": "Puzzle",
+            "property": "PuzzleId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Ordering",
+            "property": "Ordering"
+          },
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "CardTableau",
+        "human": "Card Tableau",
+        "plural": "CardTableaus",
+        "table": "CardTableaus",
+        "url": "card-tableau"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Rank"
+              },
+              {
+                "ordering": 2,
+                "string": " of "
+              },
+              {
+                "ordering": 3,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Card",
+            "property": "CardTableaus"
+          },
+          "names": {
+            "human": "Card",
+            "property": "CardId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "PileIndex"
+              }
+            ],
+            "entity": "Tableau",
+            "property": "CardTableaus"
+          },
+          "names": {
+            "human": "Tableau",
+            "property": "TableauId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Ordering",
+            "property": "Ordering"
+          },
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "CardWaste",
+        "human": "Card Waste",
+        "plural": "CardWastes",
+        "table": "CardWastes",
+        "url": "card-waste"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Rank"
+              },
+              {
+                "ordering": 2,
+                "string": " of "
+              },
+              {
+                "ordering": 3,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Card",
+            "property": "CardWastes"
+          },
+          "names": {
+            "human": "Card",
+            "property": "CardId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "StartTime"
+              }
+            ],
+            "entity": "Game",
+            "property": "CardWastes"
+          },
+          "names": {
+            "human": "Game",
+            "property": "GameId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Puzzle",
+            "property": "CardWastes"
+          },
+          "names": {
+            "human": "Puzzle",
+            "property": "PuzzleId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Ordering",
+            "property": "Ordering"
+          },
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Foundation",
+        "human": "Foundation",
+        "plural": "Foundations",
+        "table": "Foundations",
+        "url": "foundation"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "StartTime"
+              }
+            ],
+            "entity": "Game",
+            "property": "Foundations"
+          },
+          "names": {
+            "human": "Game",
+            "property": "GameId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Pile Index",
+            "property": "PileIndex"
+          },
+          "type": "integer"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Puzzle",
+            "property": "Foundations"
+          },
+          "names": {
+            "human": "Puzzle",
+            "property": "PuzzleId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Suit",
+            "property": "Foundations"
+          },
+          "names": {
+            "human": "Suit",
+            "property": "SuitId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "entity": "CardFoundation",
+            "property": "Foundation"
+          },
+          "names": {
+            "human": "Card Foundations",
+            "property": "CardFoundations"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Game",
+        "human": "Game",
+        "plural": "Games",
+        "table": "Games",
+        "url": "game"
+      },
+      "properties": [
+        {
+          "names": {
+            "human": "End Time",
+            "property": "EndTime"
+          },
+          "type": "date"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "UserName"
+              }
+            ],
+            "entity": "Player",
+            "property": "Games"
+          },
+          "names": {
+            "human": "Player",
+            "property": "PlayerId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Puzzle",
+            "property": "Games"
+          },
+          "names": {
+            "human": "Puzzle",
+            "property": "PuzzleId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Start Time",
+            "property": "StartTime"
+          },
+          "type": "date"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Status",
+            "property": "Games"
+          },
+          "names": {
+            "human": "Status",
+            "property": "StatusId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "entity": "CardStock",
+            "property": "Game"
+          },
+          "names": {
+            "human": "Card Stocks",
+            "property": "CardStocks"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "CardWaste",
+            "property": "Game"
+          },
+          "names": {
+            "human": "Card Wastes",
+            "property": "CardWastes"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Foundation",
+            "property": "Game"
+          },
+          "names": {
+            "human": "Foundations",
+            "property": "Foundations"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Move",
+            "property": "Game"
+          },
+          "names": {
+            "human": "Moves",
+            "property": "Moves"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Tableau",
+            "property": "Game"
+          },
+          "names": {
+            "human": "Tableaus",
+            "property": "Tableaus"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Move",
+        "human": "Move",
+        "plural": "Moves",
+        "table": "Moves",
+        "url": "move"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Rank"
+              },
+              {
+                "ordering": 2,
+                "string": " of "
+              },
+              {
+                "ordering": 3,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Card",
+            "property": "MovesAsCard1"
+          },
+          "names": {
+            "human": "Card 1",
+            "property": "Card1Id"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Rank"
+              },
+              {
+                "ordering": 2,
+                "string": " of "
+              },
+              {
+                "ordering": 3,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Card",
+            "property": "MovesAsCard2"
+          },
+          "names": {
+            "human": "Card 2",
+            "property": "Card2Id"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Rank"
+              },
+              {
+                "ordering": 2,
+                "string": " of "
+              },
+              {
+                "ordering": 3,
+                "property": "Suit"
+              }
+            ],
+            "entity": "Card",
+            "property": "MovesAsCard3"
+          },
+          "names": {
+            "human": "Card 3",
+            "property": "Card3Id"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "From Pile Index",
+            "property": "FromPileIndex"
+          },
+          "type": "integer"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "PileType",
+            "property": "MovesFromPileType"
+          },
+          "names": {
+            "human": "From Pile Type",
+            "property": "FromPileTypeId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "StartTime"
+              }
+            ],
+            "entity": "Game",
+            "property": "Moves"
+          },
+          "names": {
+            "human": "Game",
+            "property": "GameId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Move Time",
+            "property": "MoveTime"
+          },
+          "type": "date"
+        },
+        {
+          "names": {
+            "human": "To Pile Index",
+            "property": "ToPileIndex"
+          },
+          "type": "integer"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "PileType",
+            "property": "MovesToPileType"
+          },
+          "names": {
+            "human": "To Pile Type",
+            "property": "ToPileTypeId"
+          },
+          "type": "manyToOne"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "PileType",
+        "human": "Pile Type",
+        "plural": "PileTypes",
+        "table": "PileTypes",
+        "url": "pile-type"
+      },
+      "properties": [
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "type": "string"
+        },
+        {
+          "foreign": {
+            "entity": "Move",
+            "property": "FromPileType"
+          },
+          "names": {
+            "human": "Moves From Pile Type",
+            "property": "MovesFromPileType"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Move",
+            "property": "ToPileType"
+          },
+          "names": {
+            "human": "Moves To Pile Type",
+            "property": "MovesToPileType"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Player",
+        "human": "Player",
+        "plural": "Players",
+        "table": "Players",
+        "url": "player"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "UserName"
+              }
+            ],
+            "entity": "ApplicationUser",
+            "property": "Player"
+          },
+          "names": {
+            "human": "Application User",
+            "property": "ApplicationUserId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "entity": "Game",
+            "property": "Player"
+          },
+          "names": {
+            "human": "Games",
+            "property": "Games"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Puzzle",
+            "property": "Creator"
+          },
+          "names": {
+            "human": "Puzzles",
+            "property": "Puzzles"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Puzzle",
+        "human": "Puzzle",
+        "plural": "Puzzles",
+        "table": "Puzzles",
+        "url": "puzzle"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "UserName"
+              }
+            ],
+            "entity": "Player",
+            "property": "Puzzles"
+          },
+          "names": {
+            "human": "Creator",
+            "property": "CreatorId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Description",
+            "property": "Description"
+          },
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "names": {
+            "human": "Is Public",
+            "property": "IsPublic"
+          },
+          "type": "boolean"
+        },
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "type": "string"
+        },
+        {
+          "names": {
+            "human": "Publish Time",
+            "property": "PublishTime"
+          },
+          "nullable": true,
+          "type": "date"
+        },
+        {
+          "foreign": {
+            "entity": "CardStock",
+            "property": "Puzzle"
+          },
+          "names": {
+            "human": "Card Stocks",
+            "property": "CardStocks"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "CardWaste",
+            "property": "Puzzle"
+          },
+          "names": {
+            "human": "Card Wastes",
+            "property": "CardWastes"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Foundation",
+            "property": "Puzzle"
+          },
+          "names": {
+            "human": "Foundations",
+            "property": "Foundations"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Game",
+            "property": "Puzzle"
+          },
+          "names": {
+            "human": "Games",
+            "property": "Games"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "foreign": {
+            "entity": "Tableau",
+            "property": "Puzzle"
+          },
+          "names": {
+            "human": "Tableaus",
+            "property": "Tableaus"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Rank",
+        "human": "Rank",
+        "plural": "Ranks",
+        "table": "Ranks",
+        "url": "rank"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Id"
+              }
+            ],
+            "entity": "Card"
+          },
+          "names": {
+            "human": "Cards",
+            "property": "Cards"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "names": {
+            "human": "Code",
+            "property": "Code"
+          },
+          "type": "string"
+        },
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Status",
+        "human": "Status",
+        "plural": "Statuses",
+        "table": "Statuses",
+        "url": "status"
+      },
+      "properties": [
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "type": "string"
+        },
+        {
+          "foreign": {
+            "entity": "Game",
+            "property": "Status"
+          },
+          "names": {
+            "human": "Games",
+            "property": "Games"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Suit",
+        "human": "Suit",
+        "plural": "Suits",
+        "table": "Suits",
+        "url": "suit"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "entity": "Card",
+            "property": "Suit"
+          },
+          "names": {
+            "human": "Cards",
+            "property": "Cards"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "names": {
+            "human": "Code",
+            "property": "Code"
+          },
+          "type": "string"
+        },
+        {
+          "foreign": {
+            "entity": "Foundation",
+            "property": "Suit"
+          },
+          "names": {
+            "human": "Foundations",
+            "property": "Foundations"
+          },
+          "type": "oneToMany"
+        },
+        {
+          "names": {
+            "human": "Name",
+            "property": "Name"
+          },
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "names": {
+        "entity": "Tableau",
+        "human": "Tableau",
+        "plural": "Tableaus",
+        "table": "Tableaus",
+        "url": "tableau"
+      },
+      "properties": [
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "StartTime"
+              }
+            ],
+            "entity": "Game",
+            "property": "Tableaus"
+          },
+          "names": {
+            "human": "Game",
+            "property": "GameId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "names": {
+            "human": "Pile Index",
+            "property": "PileIndex"
+          },
+          "type": "integer"
+        },
+        {
+          "foreign": {
+            "display": [
+              {
+                "ordering": 1,
+                "property": "Name"
+              }
+            ],
+            "entity": "Puzzle",
+            "property": "Tableaus"
+          },
+          "names": {
+            "human": "Puzzle",
+            "property": "PuzzleId"
+          },
+          "type": "manyToOne"
+        },
+        {
+          "foreign": {
+            "entity": "CardTableau",
+            "property": "Tableau"
+          },
+          "names": {
+            "human": "Card Tableaus",
+            "property": "CardTableaus"
+          },
+          "type": "oneToMany"
+        }
+      ]
+    }
+  ],
+  "names": {
+    "human": "Intrepion Klondike Solitaire",
+    "namespace": "Intrepion.KlondikeSolitaire"
+  },
+  "version": "0.1.0"
+}
