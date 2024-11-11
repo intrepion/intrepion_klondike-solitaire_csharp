@@ -21,4 +21,8 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Intrepion.KlondikeSolitaire.BusinessLogic\Intrepion.KlondikeSolitaire.BusinessLogic.csproj" />
+  </ItemGroup>
+
 </Project>
