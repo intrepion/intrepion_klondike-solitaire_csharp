@@ -78,6 +78,9 @@ builder.Services.AddScoped<CardGridQueryAdapter>();
 builder.Services.AddScoped<IGameFilters, GameGridControls>();
 builder.Services.AddScoped<GameGridQueryAdapter>();
 
+builder.Services.AddScoped<IPlayerFilters, PlayerGridControls>();
+builder.Services.AddScoped<PlayerGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
