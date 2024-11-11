@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.Server.ControllerTests;
+﻿namespace Intrepion.KlondikeSolitaire.Server.ControllerTests;
 
 public class Tests
 {
