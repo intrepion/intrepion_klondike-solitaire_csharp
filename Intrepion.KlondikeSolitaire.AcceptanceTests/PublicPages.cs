@@ -39,7 +39,7 @@ public partial class PublicPages : PageTest
         var baseUrl = Environment.GetEnvironmentVariable("BASE_URL");
         if (string.IsNullOrEmpty(baseUrl))
         {
-            baseUrl = "ClientUriPlaceholder";
+            baseUrl = "http://localhost:5154";
         }
         await Page.GotoAsync(baseUrl);
         await Expect(Page).ToHaveURLAsync(baseUrl + "/");
