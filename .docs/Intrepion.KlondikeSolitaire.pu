@@ -131,6 +131,7 @@ Card }o--|| Rank
 Card }o--|| Suit
 Game }o--|| ApplicationUser
 Game }o--|| Player
+Player }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
