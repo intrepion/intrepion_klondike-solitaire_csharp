@@ -119,6 +119,7 @@ ApplicationUserToken }o--|| ApplicationUser
 Card }o--|| ApplicationUser
 Card }o--|| Rank
 Card }o--|| Suit
+Game }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
