@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Intrepion.KlondikeSolitaire.Client.Pages;
+﻿using Intrepion.KlondikeSolitaire.Client.Pages;
 using Intrepion.KlondikeSolitaire.Components;
 using Intrepion.KlondikeSolitaire.Components.Account;
 using Intrepion.KlondikeSolitaire.Data;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
