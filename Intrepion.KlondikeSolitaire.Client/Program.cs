@@ -1,4 +1,4 @@
-﻿using ApplicationNamePlaceholder.Client;
+﻿using Intrepion.KlondikeSolitaire.Client;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
