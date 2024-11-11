@@ -1,4 +1,4 @@
-﻿@inject IEntityNamePlaceholderFilters Filters
+﻿@inject IGameFilters Filters
 
 @if (Column == Filters.SortColumn)
 {
@@ -10,9 +10,9 @@ else
 }
 
 @code {
-    // Sets which EntityNamePlaceholderFilterColumns this indicator is for.
+    // Sets which GameFilterColumns this indicator is for.
     [Parameter]
-    public EntityNamePlaceholderFilterColumns Column { get; set; }
+    public GameFilterColumns Column { get; set; }
 
     // The symbol to render.
     private string SortSymbol => Filters.SortAscending ? "🔼" : "🔽";
