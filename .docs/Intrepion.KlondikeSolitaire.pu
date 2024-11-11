@@ -156,6 +156,7 @@ Game }o--|| Player
 Player }o--|| ApplicationUser
 Player ||--|| ApplicationUser
 Rank }o--|| ApplicationUser
+Suit }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
