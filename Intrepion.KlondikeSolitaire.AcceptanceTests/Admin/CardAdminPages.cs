@@ -15,25 +15,25 @@ public partial class CardAdminPages : PageTest
         var aRandomString = faker.Random.String2(10);
         var someRandomString = faker.Random.String2(10);
         await Page.GetByTestId("LowercaseNamePlaceholderNavLink").ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Home");
+        await Expect(Page).ToHaveTitleAsync("Card Home");
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Add");
+        await Expect(Page).ToHaveTitleAsync("Card Add");
 
         // CreatePropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder View");
+        await Expect(Page).ToHaveTitleAsync("Card View");
         await Page.GetByRole(AriaRole.Link, new() { Name = "Edit" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Edit");
+        await Expect(Page).ToHaveTitleAsync("Card Edit");
 
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder View");
+        await Expect(Page).ToHaveTitleAsync("Card View");
         await Page.GetByRole(AriaRole.Button, new() { Name = "Delete" }).ClickAsync();
         await Page.GetByRole(AriaRole.Button, new() { Name = "Confirm" }).ClickAsync();
         await Page.GetByRole(AriaRole.Link, new() { Name = "Back to Grid" }).ClickAsync();
-        await Expect(Page).ToHaveTitleAsync("HumanNamePlaceholder Home");
+        await Expect(Page).ToHaveTitleAsync("Card Home");
     }
 
     [SetUp]
