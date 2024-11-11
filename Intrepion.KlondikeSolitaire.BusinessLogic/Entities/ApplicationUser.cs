@@ -18,5 +18,7 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<Card> UpdatedCards { get; set; } = [];
     public ICollection<Game> UpdatedGames { get; set; } = [];
     public ICollection<Player> UpdatedPlayers { get; set; } = [];
+    public Player? Player { get; set; }
+    public Guid? PlayerId { get; set; }
     // ActualPropertyPlaceholder
 }
