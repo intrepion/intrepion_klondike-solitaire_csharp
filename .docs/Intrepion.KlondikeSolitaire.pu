@@ -83,6 +83,15 @@ entity ApplicationUserToken {
     Value : string
 }
 
+entity Card {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' CardKeyCodePlaceholder
+    --
+    ' CardPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
