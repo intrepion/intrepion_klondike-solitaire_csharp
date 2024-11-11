@@ -1,4 +1,4 @@
-@inject IEntityNamePlaceholderFilters Filters
+@inject IGameFilters Filters
 @implements IDisposable
 
 <label>
@@ -9,7 +9,7 @@
 <label>
     Filter on:
     <select @bind="SelectedColumn">
-        @foreach (EntityNamePlaceholderFilterColumns column in (EntityNamePlaceholderFilterColumns[])Enum.GetValues(typeof(EntityNamePlaceholderFilterColumns)))
+        @foreach (GameFilterColumns column in (GameFilterColumns[])Enum.GetValues(typeof(GameFilterColumns)))
         {
             <option @attributes="Selected(column)" value="@((int)column)">@(column.ToString())</option>
         }
@@ -38,9 +38,9 @@
     }
 
     // Sets selected attribute.
-    // column: The EntityNamePlaceholderFilterColumns being evaluated.
+    // column: The GameFilterColumns being evaluated.
     // Returns the proper attribute to select the option.
-    private IEnumerable<KeyValuePair<string, object>> Selected(EntityNamePlaceholderFilterColumns column)
+    private IEnumerable<KeyValuePair<string, object>> Selected(GameFilterColumns column)
     {
         if ((int)column == selectedColumn)
         {
@@ -61,7 +61,7 @@
             if (value != selectedColumn)
             {
                 selectedColumn = value;
-                Filters.FilterColumn = (EntityNamePlaceholderFilterColumns)selectedColumn;
+                Filters.FilterColumn = (GameFilterColumns)selectedColumn;
                 FilterText = string.Empty;
             }
         }
