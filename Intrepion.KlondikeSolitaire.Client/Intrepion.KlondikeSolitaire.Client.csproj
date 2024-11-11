@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intrepion.KlondikeSolitaire.BusinessLogic\Intrepion.KlondikeSolitaire.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Intrepion.KlondikeSolitaire.Shared\Intrepion.KlondikeSolitaire.Shared.csproj" />
   </ItemGroup>
 
 </Project>
