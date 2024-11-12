@@ -17,6 +17,7 @@ public class FoundationGridQueryAdapter
         {
             { FoundationFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { FoundationFilterColumns.PileIndex, x => x != null ? x.PileIndex.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
