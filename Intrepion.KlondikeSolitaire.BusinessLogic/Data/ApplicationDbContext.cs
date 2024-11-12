@@ -30,6 +30,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new CardFoundationEtc().Configure(builder.Entity<CardFoundation>());
         new CardStockEtc().Configure(builder.Entity<CardStock>());
         new CardTableauEtc().Configure(builder.Entity<CardTableau>());
+        new CardWasteEtc().Configure(builder.Entity<CardWaste>());
         // EntityTypeCfgCodePlaceholder
     }
 }
