@@ -13,5 +13,6 @@ public class Move
     public int FromPileIndex { get; set; }
     public PileType? FromPileTypeId { get; set; }
     public Game? GameId { get; set; }
+    public DateTime MoveTime { get; set; }
     // ActualPropertyPlaceholder
 }
