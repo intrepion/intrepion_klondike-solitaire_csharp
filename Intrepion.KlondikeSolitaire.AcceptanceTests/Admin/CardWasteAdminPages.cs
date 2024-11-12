@@ -6,7 +6,7 @@ namespace ApplicationNamePlaceholder.AcceptanceTests.Admin;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public partial class EntityNamePlaceholderAdminPages : PageTest
+public partial class CardWasteAdminPages : PageTest
 {
     [Test]
     public async Task MainNavigation()
