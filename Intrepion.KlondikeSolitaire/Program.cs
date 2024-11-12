@@ -126,6 +126,9 @@ builder.Services.AddScoped<StatusGridQueryAdapter>();
 builder.Services.AddScoped<ISuitFilters, SuitGridControls>();
 builder.Services.AddScoped<SuitGridQueryAdapter>();
 
+builder.Services.AddScoped<ITableauFilters, TableauGridControls>();
+builder.Services.AddScoped<TableauGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
