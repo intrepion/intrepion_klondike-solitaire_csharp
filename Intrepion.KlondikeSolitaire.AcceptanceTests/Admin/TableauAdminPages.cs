@@ -19,6 +19,7 @@ public partial class TableauAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Tableau Add");
 
+        await Page.GetByLabel("Pile Index:", new() { Exact = true }).FillAsync("1");
         // CreatePropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
