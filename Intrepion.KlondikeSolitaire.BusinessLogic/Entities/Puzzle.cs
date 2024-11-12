@@ -11,5 +11,6 @@ public class Puzzle
     public string Description { get; set; } = string.Empty;
     public bool IsPublic { get; set; }
     public string Name { get; set; } = string.Empty;
+    public DateTime PublishTime { get; set; }
     // ActualPropertyPlaceholder
 }
