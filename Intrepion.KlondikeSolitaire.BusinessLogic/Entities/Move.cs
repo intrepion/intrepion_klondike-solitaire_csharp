@@ -15,5 +15,6 @@ public class Move
     public Game? GameId { get; set; }
     public DateTime MoveTime { get; set; }
     public int ToPileIndex { get; set; }
+    public PileType? ToPileTypeId { get; set; }
     // ActualPropertyPlaceholder
 }
