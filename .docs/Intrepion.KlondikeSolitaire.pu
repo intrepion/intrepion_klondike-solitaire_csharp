@@ -307,6 +307,7 @@ entity Tableau {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    GameId : Game
     ' TableauKeyCodePlaceholder
     --
     ' TableauPropertyCodePlaceholder
