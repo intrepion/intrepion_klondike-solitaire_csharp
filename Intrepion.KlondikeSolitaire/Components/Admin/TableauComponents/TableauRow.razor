@@ -4,7 +4,7 @@
 {
     <div class="row Tableau-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentTableau.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/tableau/edit/@CurrentTableau.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -70,7 +70,7 @@
         !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentTableau?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentTableau?.Id}";
+    private string ViewLink => $"admin/tableau/view/{CurrentTableau?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
