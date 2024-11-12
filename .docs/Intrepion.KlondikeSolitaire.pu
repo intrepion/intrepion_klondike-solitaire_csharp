@@ -160,6 +160,7 @@ entity CardWaste {
     PuzzleId : Puzzle
     ' CardWasteKeyCodePlaceholder
     --
+    Ordering : int
     ' CardWastePropertyCodePlaceholder
 }
 
