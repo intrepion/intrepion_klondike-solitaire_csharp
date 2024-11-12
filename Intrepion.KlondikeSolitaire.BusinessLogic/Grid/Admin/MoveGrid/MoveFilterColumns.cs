@@ -1,6 +1,6 @@
-﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.MoveGrid;
 
-public enum EntityNamePlaceholderFilterColumns
+public enum MoveFilterColumns
 {
     Id,
 
