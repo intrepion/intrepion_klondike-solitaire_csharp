@@ -140,6 +140,7 @@ Card }o--|| Rank
 Card }o--|| Suit
 CardFoundation }o--|| ApplicationUser
 CardFoundation }o--|| Card
+CardFoundation }o--|| Foundation
 ' RelationshipCodePlaceholder
 
 @enduml
