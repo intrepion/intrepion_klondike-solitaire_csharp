@@ -146,6 +146,7 @@ entity CardTableau {
     TableauId : Tableau
     ' CardTableauKeyCodePlaceholder
     --
+    Ordering : int
     ' CardTableauPropertyCodePlaceholder
 }
 
