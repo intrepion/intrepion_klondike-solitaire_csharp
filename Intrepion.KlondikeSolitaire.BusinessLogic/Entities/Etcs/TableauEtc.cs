@@ -7,10 +7,10 @@ public class TableauEtc : IEntityTypeConfiguration<Tableau>
 {
     public void Configure(EntityTypeBuilder<Tableau> builder)
     {
-        builder.ToTable("TableNamePlaceholder", x => x.IsTemporal());
+        builder.ToTable("Tableaus", x => x.IsTemporal());
 
         builder.HasOne(x => x.ApplicationUserUpdatedBy)
-            .WithMany(x => x.UpdatedTableNamePlaceholder)
+            .WithMany(x => x.UpdatedTableaus)
             .OnDelete(DeleteBehavior.Restrict);
 
         // EntityConfigurationCodePlaceholder
