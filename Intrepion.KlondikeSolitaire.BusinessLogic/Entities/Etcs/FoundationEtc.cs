@@ -13,6 +13,9 @@ public class FoundationEtc : IEntityTypeConfiguration<Foundation>
             .WithMany(x => x.UpdatedFoundations)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.GameId)
+            .WithMany(x => x.Foundations)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
