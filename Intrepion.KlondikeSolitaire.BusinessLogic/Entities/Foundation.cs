@@ -8,5 +8,6 @@ public class Foundation
     public Guid Id { get; set; }
 
     public Game? GameId { get; set; }
+    public int PileIndex { get; set; }
     // ActualPropertyPlaceholder
 }
