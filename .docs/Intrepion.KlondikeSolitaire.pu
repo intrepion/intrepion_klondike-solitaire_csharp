@@ -255,6 +255,7 @@ entity Puzzle {
     --
     Description : string
     IsPublic : bool
+    Name : string
     ' PuzzlePropertyCodePlaceholder
 }
 
