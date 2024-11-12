@@ -12,5 +12,6 @@ public class Card
     public ICollection<CardFoundation> CardFoundations { get; set; } = [];
     public ICollection<CardStock> CardStocks { get; set; } = [];
     public ICollection<CardTableau> CardTableaus { get; set; } = [];
+    public ICollection<CardWaste> CardWastes { get; set; } = [];
     // ActualPropertyPlaceholder
 }
