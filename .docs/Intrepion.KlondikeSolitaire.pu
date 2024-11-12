@@ -249,6 +249,7 @@ Game }o--|| Player
 Game }o--|| Puzzle
 Game }o--|| Status
 Move }o--|| ApplicationUser
+Move }o--|| Card
 ' RelationshipCodePlaceholder
 
 @enduml
