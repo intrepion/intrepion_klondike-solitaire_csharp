@@ -28,6 +28,13 @@
                 <InputText @bind-Value="Puzzle.Name" @oninput="HandleNameChange"/>
             </label>
         </p>
+        <h2>Publish Time</h2>
+        <p>
+            <label>
+                Publish Time:
+                <InputDate @bind-Value="Puzzle.PublishTime" @oninput="HandlePublishTimeChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
