@@ -7,6 +7,13 @@
         <DataAnnotationsValidator />
         <ValidationSummary />
 
+        <h2>Description</h2>
+        <p>
+            <label>
+                Description:
+                <InputText @bind-Value="Puzzle.Description" @oninput="HandleDescriptionChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
