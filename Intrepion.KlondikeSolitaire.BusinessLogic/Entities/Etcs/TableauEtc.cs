@@ -16,6 +16,9 @@ public class TableauEtc : IEntityTypeConfiguration<Tableau>
         builder.HasOne(x => x.GameId)
             .WithMany(x => x.Tableaus)
             .OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(x => x.PuzzleId)
+            .WithMany(x => x.Tableaus)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
