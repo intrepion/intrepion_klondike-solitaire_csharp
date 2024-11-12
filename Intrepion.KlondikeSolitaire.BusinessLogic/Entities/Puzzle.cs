@@ -12,5 +12,6 @@ public class Puzzle
     public bool IsPublic { get; set; }
     public string Name { get; set; } = string.Empty;
     public DateTime PublishTime { get; set; }
+    public ICollection<CardStock> CardStocks { get; set; } = [];
     // ActualPropertyPlaceholder
 }
