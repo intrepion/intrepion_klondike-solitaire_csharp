@@ -4,11 +4,11 @@
 @inject IPageHelper PageHelper
 @inject EditSuccess EditSuccessState
 
-<PageTitle>HumanNamePlaceholder View</PageTitle>
+<PageTitle>Card Foundation View</PageTitle>
 
 @if (NotFound && !Loading)
 {
-    <div class="alert alert-warning">HumanNamePlaceholder with that id doesn't exist.</div>
+    <div class="alert alert-warning">Card Foundation with that id doesn't exist.</div>
 }
 else
 {
@@ -23,7 +23,7 @@ else
         <br />
         @if (EditSuccess)
         {
-            <div class="alert alert-success">Successfully updated the HumanNamePlaceholder.</div>
+            <div class="alert alert-success">Successfully updated the Card Foundation.</div>
         }
         <hr />
         <h2>Id</h2>
@@ -55,7 +55,7 @@ else
         }
         else
         {
-            <div class="btn btn-danger">🚫 This HumanNamePlaceholder has been deleted.</div>
+            <div class="btn btn-danger">🚫 This Card Foundation has been deleted.</div>
         }
     }
 }
@@ -64,7 +64,7 @@ else
     // Tracking of asynchronous calls.
     private bool Loading;
 
-    // Id from route of HumanNamePlaceholder.
+    // Id from route of Card Foundation.
     [Parameter]
     public Guid CardFoundationId { get; set; }
 
@@ -114,7 +114,7 @@ else
         }
     }
 
-    // Loads the HumanNamePlaceholder.
+    // Loads the Card Foundation.
     private async Task LoadCardFoundationAsync()
     {
         if (Loading)
@@ -145,7 +145,7 @@ else
         Loading = false;
     }
 
-    // Deletes the HumanNamePlaceholder.
+    // Deletes the Card Foundation.
     private async Task DeleteAsync()
     {
         if (Loading)
