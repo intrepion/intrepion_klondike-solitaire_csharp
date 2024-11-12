@@ -17,6 +17,7 @@ public class StatusGridQueryAdapter
         {
             { StatusFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { StatusFilterColumns.Name, x => x != null && x.Name != null ? x.Name : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
