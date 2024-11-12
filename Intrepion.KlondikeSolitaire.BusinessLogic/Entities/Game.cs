@@ -14,5 +14,6 @@ public class Game
     public Status? StatusId { get; set; }
     public ICollection<CardStock> CardStocks { get; set; } = [];
     public ICollection<CardWaste> CardWastes { get; set; } = [];
+    public ICollection<Foundation> Foundations { get; set; } = [];
     // ActualPropertyPlaceholder
 }
