@@ -170,6 +170,7 @@ CardStock }o--|| ApplicationUser
 CardStock }o--|| Card
 CardStock }o--|| Game
 CardStock }o--|| Puzzle
+CardTableau }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
