@@ -289,6 +289,7 @@ Move }o--|| Game
 Move }o--|| PileType
 PileType }o--|| ApplicationUser
 Player }o--|| ApplicationUser
+Player }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
