@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.UnitTests;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.UnitTests;
 
 public class Tests
 {
