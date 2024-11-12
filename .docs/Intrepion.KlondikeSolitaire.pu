@@ -189,6 +189,7 @@ entity Game {
     StatusId : Status
     CardStocks : ICollection<CardStock>
     CardWastes : ICollection<CardWaste>
+    Foundations : ICollection<Foundation>
     ' GameKeyCodePlaceholder
     --
     EndTime : DateTime
