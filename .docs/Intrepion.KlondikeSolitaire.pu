@@ -281,6 +281,7 @@ entity Status {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    Games : ICollection<Game>
     ' StatusKeyCodePlaceholder
     --
     Name : string
