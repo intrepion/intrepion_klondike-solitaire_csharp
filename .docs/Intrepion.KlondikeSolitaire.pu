@@ -370,6 +370,7 @@ Status }o--|| ApplicationUser
 Suit }o--|| ApplicationUser
 Tableau }o--|| ApplicationUser
 Tableau }o--|| Game
+Tableau }o--|| Puzzle
 ' RelationshipCodePlaceholder
 
 @enduml
