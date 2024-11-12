@@ -1,10 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.0.0
 MinimumVisualStudioVersion = 16.0.0.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intrepion.KlondikeSolitaire", "Intrepion.KlondikeSolitaire\Intrepion.KlondikeSolitaire.csproj", "{8D0E308B-F392-4F07-BD90-BD670D9ADA7D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intrepion.KlondikeSolitaire.Client", "Intrepion.KlondikeSolitaire.Client\Intrepion.KlondikeSolitaire.Client.csproj", "{ECAE8A7C-07BE-4818-A437-29382AC49D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intrepion.KlondikeSolitaire.AcceptanceTests", "Intrepion.KlondikeSolitaire.AcceptanceTests\Intrepion.KlondikeSolitaire.AcceptanceTests.csproj", "{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,18 @@ Global
 		{8D0E308B-F392-4F07-BD90-BD670D9ADA7D}.Release|x64.Build.0 = Release|Any CPU
 		{8D0E308B-F392-4F07-BD90-BD670D9ADA7D}.Release|x86.ActiveCfg = Release|Any CPU
 		{8D0E308B-F392-4F07-BD90-BD670D9ADA7D}.Release|x86.Build.0 = Release|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Debug|x64.Build.0 = Debug|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Debug|x86.Build.0 = Debug|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Release|x64.ActiveCfg = Release|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Release|x64.Build.0 = Release|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F59FBC93-87EE-4C9C-9F47-7DF9ACBEB51C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
