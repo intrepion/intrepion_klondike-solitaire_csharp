@@ -138,6 +138,7 @@ Card }o--|| ApplicationUser
 Card }o--|| Rank
 Card }o--|| Suit
 CardFoundation }o--|| ApplicationUser
+CardFoundation }o--|| Card
 ' RelationshipCodePlaceholder
 
 @enduml
