@@ -43,6 +43,7 @@ entity ApplicationUser {
     UpdatedMoves : ICollection<Move>
     UpdatedPileTypes : ICollection<PileType>
     UpdatedPlayers : ICollection<Player>
+    Player : ICollection<Player>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
