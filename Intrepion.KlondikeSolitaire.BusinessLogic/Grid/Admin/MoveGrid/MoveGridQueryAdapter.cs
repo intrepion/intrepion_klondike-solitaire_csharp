@@ -19,6 +19,7 @@ public class MoveGridQueryAdapter
 
             { MoveFilterColumns.FromPileIndex, x => x != null ? x.FromPileIndex.ToString() : string.Empty },
             { MoveFilterColumns.MoveTime, x => x != null ? x.MoveTime.ToString() : string.Empty },
+            { MoveFilterColumns.ToPileIndex, x => x != null ? x.ToPileIndex.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
