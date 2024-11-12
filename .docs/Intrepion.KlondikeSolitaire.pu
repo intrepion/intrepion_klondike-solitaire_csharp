@@ -35,6 +35,7 @@ entity ApplicationUser {
     UpdatedApplicationUserTokens : ICollection<ApplicationUserToken>
     UpdatedCards : ICollection<Card>
     UpdatedCardFoundations : ICollection<CardFoundation>
+    UpdatedCardStocks : ICollection<CardStock>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
