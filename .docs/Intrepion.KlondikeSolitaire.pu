@@ -337,6 +337,7 @@ Player }o--|| ApplicationUser
 Puzzle }o--|| ApplicationUser
 Puzzle }o--|| Player
 Rank }o--|| ApplicationUser
+Status }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
