@@ -33,6 +33,7 @@ entity ApplicationUser {
     UpdatedApplicationUserLogins : ICollection<ApplicationUserLogin>
     UpdatedApplicationUserRoles : ICollection<ApplicationUserRole>
     UpdatedApplicationUserTokens : ICollection<ApplicationUserToken>
+    UpdatedCards : ICollection<Card>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
