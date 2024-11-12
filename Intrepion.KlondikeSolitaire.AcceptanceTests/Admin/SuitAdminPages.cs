@@ -29,6 +29,7 @@ public partial class SuitAdminPages : PageTest
         await Expect(Page).ToHaveTitleAsync("Suit Edit");
 
         await Page.GetByLabel("Code:", new() { Exact = true }).FillAsync("someCode" + someRandomString);
+        await Page.GetByLabel("Name:", new() { Exact = true }).FillAsync("someName" + someRandomString);
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
