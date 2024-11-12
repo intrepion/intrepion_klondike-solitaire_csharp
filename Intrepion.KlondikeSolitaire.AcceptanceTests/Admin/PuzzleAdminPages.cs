@@ -33,6 +33,7 @@ public partial class PuzzleAdminPages : PageTest
         await Page.GetByLabel("Description:", new() { Exact = true }).FillAsync("someDescription" + someRandomString);
         await Page.GetByLabel("Is Public:", new() { Exact = true }).CheckAsync();
         await Page.GetByLabel("Name:", new() { Exact = true }).FillAsync("someName" + someRandomString);
+        await Page.GetByLabel("Publish Time:", new() { Exact = true }).FillAsync("2022-02-02");
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
