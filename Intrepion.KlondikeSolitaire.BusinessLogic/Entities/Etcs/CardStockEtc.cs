@@ -13,6 +13,9 @@ public class CardStockEtc : IEntityTypeConfiguration<CardStock>
             .WithMany(x => x.UpdatedCardStocks)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.CardId)
+            .WithMany(x => x.CardStocks)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
