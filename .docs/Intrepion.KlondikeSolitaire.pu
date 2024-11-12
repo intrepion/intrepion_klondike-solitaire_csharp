@@ -99,6 +99,7 @@ entity Card {
     RankId : Rank
     SuitId : Suit
     CardFoundations : ICollection<CardFoundation>
+    CardStocks : ICollection<CardStock>
     ' CardKeyCodePlaceholder
     --
     ' CardPropertyCodePlaceholder
