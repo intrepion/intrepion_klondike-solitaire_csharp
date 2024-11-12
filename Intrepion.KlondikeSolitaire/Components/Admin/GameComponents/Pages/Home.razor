@@ -6,9 +6,9 @@
 @inject NavigationManager Navigation
 @inject GameGridQueryAdapter QueryAdapter
 
-<PageTitle>HumanNamePlaceholder Home</PageTitle>
+<PageTitle>Game Home</PageTitle>
 
-<h1>HumanNamePlaceholder Home</h1>
+<h1>Game Home</h1>
 <h6><a href="/admin/UrlNamePlaceholder/add">Create New</a></h6>
 
 <GridWrapper @ref="Wrapper"
@@ -59,7 +59,7 @@
         {
             <div class="row">
                 <div class="col-12 alert alert-warning">
-                    No HumanNamePlaceholder found.
+                    No Game found.
                 </div>
             </div>
         }
@@ -154,7 +154,7 @@
         return ReloadAsync();
     }
 
-    // Deletes a HumanNamePlaceholder.
+    // Deletes a Game.
     // <snippet1>
     private async Task DeleteGameAsync()
     {
