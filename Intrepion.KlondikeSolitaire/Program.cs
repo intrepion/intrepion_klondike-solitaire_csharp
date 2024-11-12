@@ -15,6 +15,7 @@ using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.MoveGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PileTypeGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PlayerGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PuzzleGrid;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.RankGrid;
 // GridNamespaceCodePlaceholder
 
 using ApplicationNamePlaceholder.Components;
