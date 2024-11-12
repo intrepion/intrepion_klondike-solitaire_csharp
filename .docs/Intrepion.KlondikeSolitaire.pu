@@ -156,6 +156,7 @@ entity CardWaste {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     CardId : Card
+    GameId : Game
     ' CardWasteKeyCodePlaceholder
     --
     ' CardWastePropertyCodePlaceholder
