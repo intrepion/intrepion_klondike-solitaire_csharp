@@ -4,7 +4,7 @@
 @inject NavigationManager Navigation
 @inject IPageHelper PageHelper
 
-<PageTitle>HumanNamePlaceholder Add</PageTitle>
+<PageTitle>Card Stock Add</PageTitle>
 
 @if (CardStock is not null)
 {
@@ -18,13 +18,13 @@
 @if (Success)
 {
     <br />
-    <div class="alert alert-success">The HumanNamePlaceholder was successfully added.</div>
+    <div class="alert alert-success">The Card Stock was successfully added.</div>
 }
 
 @if (Error)
 {
     <br />
-    <div class="alert alert-danger">Failed to add the HumanNamePlaceholder (@ErrorMessage).</div>
+    <div class="alert alert-danger">Failed to add the Card Stock (@ErrorMessage).</div>
 }
 
 @code {
