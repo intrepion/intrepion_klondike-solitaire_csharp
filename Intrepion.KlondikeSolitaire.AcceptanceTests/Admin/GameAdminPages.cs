@@ -20,6 +20,7 @@ public partial class GameAdminPages : PageTest
         await Expect(Page).ToHaveTitleAsync("Game Add");
 
         await Page.GetByLabel("End Time:", new() { Exact = true }).FillAsync("2011-01-01");
+        await Page.GetByLabel("Start Time:", new() { Exact = true }).FillAsync("2011-01-01");
         // CreatePropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
