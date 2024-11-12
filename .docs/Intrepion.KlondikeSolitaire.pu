@@ -115,6 +115,7 @@ entity CardFoundation {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    Card : Card
     ' CardFoundationKeyCodePlaceholder
     --
     ' CardFoundationPropertyCodePlaceholder
