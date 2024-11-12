@@ -1,0 +1,198 @@
+@page "/admin/UrlNamePlaceholder/edit/{EntityNamePlaceholderId:guid}"
+@rendermode InteractiveServer
+@implements IDisposable
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager Navigation
+@inject IPageHelper PageHelper
+@inject EditSuccess EditSuccessState
+
+<PageTitle>HumanNamePlaceholder Edit</PageTitle>
+
+@if (EntityNamePlaceholder is null && !Busy)
+{
+    <p>Could not find HumanNamePlaceholder with id @EntityNamePlaceholderId.</p>
+}
+else
+{
+    <EntityNamePlaceholderForm Busy="Busy" 
+                 EntityNamePlaceholder="EntityNamePlaceholder" 
+                 DbEntityNamePlaceholder="DbEntityNamePlaceholder" 
+                 IsAdd="false" 
+                 CancelRequest="Cancel" 
+                 ValidationResult="@(async (success) => await ValidationResultAsync(success))" />
+}
+
+@if (ConcurrencyError)
+{
+    <br />
+    <div class="alert alert-danger">
+        <p>
+            The HumanNamePlaceholder details have changed since it was last loaded. The updated fields are highlighted in the form.
+            Please choose an option:
+        </p>
+        <p><b>Cancel</b> to lose your changes and keep the database version.</p>
+        <p><b>Submit</b> to force an update with your version.</p>
+    </div>
+}
+
+@if (Error)
+{
+    <br />
+    <div class="alert alert-danger">Failed to update the HumanNamePlaceholder (@ErrorMessage).</div>
+}
+
+@code {
+    /// <summary>
+    /// Id of HumanNamePlaceholder to edit
+    /// </summary>
+    [Parameter]
+    public Guid EntityNamePlaceholderId { get; set; }
+
+    /// <summary>
+    /// The <see cref="ApplicationDbContext"/> for database access.
+    /// </summary>
+    private ApplicationDbContext? Context { get; set; }
+
+    /// <summary>
+    /// EntityNamePlaceholder being edited
+    /// </summary>
+    private EntityNamePlaceholder EntityNamePlaceholder { get; set; } = new EntityNamePlaceholder();
+
+    /// <summary>
+    /// Database version when concurrency issues exist
+    /// </summary>
+    private EntityNamePlaceholder DbEntityNamePlaceholder { get; set; } = new EntityNamePlaceholder();
+
+    /// <summary>
+    /// Avoid concurrent requests
+    /// </summary>
+    private bool Busy;
+
+    /// <summary>
+    /// An error occurred in the update
+    /// </summary>
+    private bool Error;
+
+    /// <summary>
+    /// A concurrency error needs resolution
+    /// </summary>
+    private bool ConcurrencyError;
+
+    /// <summary>
+    /// Error message
+    /// </summary>
+    private string ErrorMessage = string.Empty;
+
+    /// <summary>
+    /// Start it up
+    /// </summary>
+    /// <returns>Task</returns>
+    // <snippet2>
+    protected override async Task OnInitializedAsync()
+    {
+        Busy = true;
+
+        try
+        {
+            Context = DbFactory.CreateDbContext();
+
+            if (Context is not null && Context.TableNamePlaceholder is not null)
+            {
+                var LowercaseNamePlaceholder = await Context.TableNamePlaceholder.SingleOrDefaultAsync(x => x.Id == EntityNamePlaceholderId);
+
+                if (LowercaseNamePlaceholder is not null)
+                {
+                    EntityNamePlaceholder = LowercaseNamePlaceholder;
+                }
+            }
+        }
+        finally
+        {
+            Busy = false;
+        }
+    }
+    // </snippet2>
+
+    /// <summary>
+    /// Result of form validation
+    /// </summary>
+    /// <param name="success">Success when model is valid</param>
+    /// <returns>Task</returns>
+    private async Task ValidationResultAsync(bool success)
+    {
+        if (Busy)
+        {
+            return;
+        }
+
+        if (!success)
+        {
+            // still need to edit model
+            Error = false;
+            ConcurrencyError = false;
+            return;
+        }
+
+        Busy = true; // async
+        try
+        {
+            if (Context is not null)
+            {
+                await Context.SaveChangesAsync();
+            }
+
+            EditSuccessState.Success = true;
+            // go to view to see the record
+            Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{EntityNamePlaceholder.Id}");
+        }
+        catch (DbUpdateConcurrencyException dbex)
+        {
+            EditSuccessState.Success = false;
+
+            // concurrency issues!
+            ConcurrencyError = true;
+
+            // get values from database
+            var dbValues = dbex.Entries[0].GetDatabaseValues();
+
+            if (dbValues is null)
+            {
+                // deleted - show HumanNamePlaceholder not found
+                Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{EntityNamePlaceholder.Id}");
+                return;
+            }
+
+            // bind to show labels on form
+            DbEntityNamePlaceholder = (EntityNamePlaceholder)dbValues.ToObject();
+
+            // move to original so second submit works (unless there is another concurrent edit)
+            dbex.Entries[0].OriginalValues.SetValues(dbValues);
+            Error = false;
+            Busy = false;
+        }
+        catch (Exception ex)
+        {
+            EditSuccessState.Success = false;
+            // unknown exception
+            Error = true;
+            ErrorMessage = ex.Message;
+            Busy = false;
+        }
+    }
+
+    /// <summary>
+    /// Bail out!
+    /// </summary>
+    private void Cancel()
+    {
+        Busy = true;
+        Navigation.NavigateTo($"/admin/UrlNamePlaceholder/{PageHelper.Page}");
+    }
+
+    /// <summary>
+    /// Implement <see cref="IDisposable"/>.
+    /// </summary>
+    // <snippet1>
+    public void Dispose() => Context?.Dispose();
+    // </snippet1>
+}
