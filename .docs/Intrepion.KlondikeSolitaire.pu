@@ -187,6 +187,7 @@ entity Game {
     PlayerId : Player
     PuzzleId : Puzzle
     StatusId : Status
+    CardStocks : ICollection<CardStock>
     ' GameKeyCodePlaceholder
     --
     EndTime : DateTime
