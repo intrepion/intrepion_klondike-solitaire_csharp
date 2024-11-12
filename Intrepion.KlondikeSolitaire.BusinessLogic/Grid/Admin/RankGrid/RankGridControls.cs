@@ -1,4 +1,4 @@
-namespace ApplicationNamePlaceholder.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
 
 // State of grid filters.
 public class EntityNamePlaceholderGridControls(IPageHelper pageHelper) : IEntityNamePlaceholderFilters
