@@ -21,6 +21,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Rank> Ranks { get; set; }
     public DbSet<Status> Statuses { get; set; }
     public DbSet<Suit> Suits { get; set; }
+    public DbSet<Tableau> Tableaus { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
