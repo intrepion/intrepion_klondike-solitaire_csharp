@@ -218,6 +218,15 @@ entity Move {
     ' MovePropertyCodePlaceholder
 }
 
+entity PileType {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' PileTypeKeyCodePlaceholder
+    --
+    ' PileTypePropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
