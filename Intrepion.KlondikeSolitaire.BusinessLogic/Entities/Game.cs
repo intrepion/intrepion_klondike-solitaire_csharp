@@ -9,5 +9,6 @@ public class Game
 
     public DateTime EndTime { get; set; }
     public Player? PlayerId { get; set; }
+    public Puzzle? PuzzleId { get; set; }
     // ActualPropertyPlaceholder
 }
