@@ -10,5 +10,6 @@ public class Puzzle
     public Player? CreatorId { get; set; }
     public string Description { get; set; } = string.Empty;
     public bool IsPublic { get; set; }
+    public string Name { get; set; } = string.Empty;
     // ActualPropertyPlaceholder
 }
