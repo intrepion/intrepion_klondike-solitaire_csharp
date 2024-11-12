@@ -48,6 +48,7 @@ entity ApplicationUser {
     UpdatedRanks : ICollection<Rank>
     UpdatedStatuses : ICollection<Status>
     UpdatedSuits : ICollection<Suit>
+    UpdatedTableaus : ICollection<Tableau>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
