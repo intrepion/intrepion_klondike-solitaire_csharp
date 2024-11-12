@@ -9,6 +9,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 {
     public DbSet<Card> Cards { get; set; }
     public DbSet<CardFoundation> CardFoundations { get; set; }
+    public DbSet<CardStock> CardStocks { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
