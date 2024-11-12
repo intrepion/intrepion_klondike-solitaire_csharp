@@ -5,5 +5,6 @@ public enum SuitFilterColumns
     Id,
 
     Code,
+    Name,
     // FilterColumnCodePlaceholder
 }
