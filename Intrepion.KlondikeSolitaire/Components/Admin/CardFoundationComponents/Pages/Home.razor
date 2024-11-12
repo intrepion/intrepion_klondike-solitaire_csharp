@@ -44,6 +44,10 @@
                 <SortIndicator Column="@(CardFoundationFilterColumns.Id)" />&nbsp;Id
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(CardFoundationFilterColumns.Ordering))">
+                <SortIndicator Column="@(CardFoundationFilterColumns.Ordering)" />&nbsp;Ordering
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
