@@ -29,6 +29,7 @@ public partial class MoveAdminPages : PageTest
         await Expect(Page).ToHaveTitleAsync("Move Edit");
 
         await Page.GetByLabel("From Pile Index:", new() { Exact = true }).FillAsync("2");
+        await Page.GetByLabel("Move Time:", new() { Exact = true }).FillAsync("2022-02-02");
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
