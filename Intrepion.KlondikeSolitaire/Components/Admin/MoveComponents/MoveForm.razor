@@ -14,6 +14,13 @@
                 <InputNumber @bind-Value="Move.FromPileIndex" @oninput="HandleFromPileIndexChange"/>
             </label>
         </p>
+        <h2>Move Time</h2>
+        <p>
+            <label>
+                Move Time:
+                <InputDate @bind-Value="Move.MoveTime" @oninput="HandleMoveTimeChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
