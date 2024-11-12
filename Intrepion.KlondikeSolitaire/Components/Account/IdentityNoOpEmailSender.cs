@@ -1,8 +1,8 @@
-﻿using Intrepion.KlondikeSolitaire.Data;
+﻿using ApplicationNamePlaceholder.BusinessLogic.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
-namespace Intrepion.KlondikeSolitaire.Components.Account;
+namespace ApplicationNamePlaceholder.Components.Account;
 
 // Remove the "else if (EmailSender is IdentityNoOpEmailSender)" block from RegisterConfirmation.razor after updating with a real implementation.
 internal sealed class IdentityNoOpEmailSender : IEmailSender<ApplicationUser>

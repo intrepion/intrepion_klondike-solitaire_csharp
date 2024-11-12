@@ -1,0 +1,19 @@
+﻿@inject IApplicationUserFilters Filters
+
+@if (Column == Filters.SortColumn)
+{
+    <span>@SortSymbol</span>
+}
+else
+{
+    <span>&nbsp;</span>
+}
+
+@code {
+    // Sets which ApplicationUserFilterColumns this indicator is for.
+    [Parameter]
+    public ApplicationUserFilterColumns Column { get; set; }
+
+    // The symbol to render.
+    private string SortSymbol => Filters.SortAscending ? "🔼" : "🔽";
+}

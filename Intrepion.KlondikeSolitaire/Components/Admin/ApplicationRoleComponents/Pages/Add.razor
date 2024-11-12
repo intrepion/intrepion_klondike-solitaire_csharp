@@ -1,0 +1,93 @@
+@page "/admin/application-role/add"
+@rendermode InteractiveServer
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager Navigation
+@inject IPageHelper PageHelper
+
+<PageTitle>Application Role Add</PageTitle>
+
+@if (ApplicationRole is not null)
+{
+    <ApplicationRoleForm Busy="Busy" 
+                 ApplicationRole="ApplicationRole" 
+                 IsAdd="true"
+                 CancelRequest="Cancel"
+                 ValidationResult="@(async (success) => await ValidationResultAsync(success))" />
+}
+@if (Success)
+{
+    <br />
+    <div class="alert alert-success">The Application Role was successfully added.</div>
+}
+@if (Error)
+{
+    <br />
+    <div class="alert alert-danger">Failed to add the Application Role (@ErrorMessage).</div>
+}
+
+@code {
+    private ApplicationRole? ApplicationRole { get; set; }
+
+    // True when an asynchronous operation is running.
+    private bool Busy;
+
+    // True after successful add.
+    private bool Success;
+
+    // True when an error occurred.
+    private bool Error;
+
+    private string ErrorMessage = string.Empty;
+
+    // Start with fresh ApplicationRole.
+    protected override void OnInitialized()
+    {
+        ApplicationRole = new();
+    }
+
+    // Respond to a forms submission.
+    // success is True when valid.
+    private async Task ValidationResultAsync(bool success)
+    {
+        if (Busy)
+        {
+            return;
+        }
+
+        if (!success)
+        {
+            Success = false;
+            Error = false;
+            return;
+        }
+
+        Busy = true;
+
+        using var context = DbFactory.CreateDbContext();
+
+        // This just attaches.
+        if (ApplicationRole is not null)
+        {
+            context.Roles?.Add(ApplicationRole);
+        }
+
+        try
+        {
+            await context.SaveChangesAsync();
+            Success = true;
+            Error = false;
+
+            Navigation.NavigateTo($"/admin/application-role/view/{ApplicationRole?.Id}");
+        }
+        catch (Exception ex)
+        {
+            Success = false;
+            Error = true;
+            ErrorMessage = ex.Message;
+            Busy = false;
+        }
+    }
+
+    // Back to list.
+    private void Cancel() => Navigation.NavigateTo($"/admin/application-role/{PageHelper.Page}");
+}
