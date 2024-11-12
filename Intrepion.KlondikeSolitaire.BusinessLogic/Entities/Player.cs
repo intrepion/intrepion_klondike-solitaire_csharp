@@ -9,5 +9,6 @@ public class Player
 
     public ApplicationUser? ApplicationUserId { get; set; }
     public ICollection<Game> Games { get; set; } = [];
+    public ICollection<Puzzle> Puzzles { get; set; } = [];
     // ActualPropertyPlaceholder
 }
