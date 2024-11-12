@@ -9,5 +9,6 @@ public class CardTableau
 
     public Card? CardId { get; set; }
     public Tableau? TableauId { get; set; }
+    public int Ordering { get; set; }
     // ActualPropertyPlaceholder
 }
