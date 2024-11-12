@@ -258,6 +258,7 @@ Move }o--|| Card
 Move }o--|| Card
 Move }o--|| Card
 Move }o--|| PileType
+Move }o--|| Game
 ' RelationshipCodePlaceholder
 
 @enduml
