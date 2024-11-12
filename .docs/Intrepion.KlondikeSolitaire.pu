@@ -224,6 +224,7 @@ entity PileType {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     MovesFromPileType : ICollection<Move>
+    MovesToPileType : ICollection<Move>
     ' PileTypeKeyCodePlaceholder
     --
     Name : string
