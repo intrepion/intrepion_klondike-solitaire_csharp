@@ -10,5 +10,6 @@ public class Suit
     public string Code { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public ICollection<Card> Cards { get; set; } = [];
+    public ICollection<Foundation> Foundations { get; set; } = [];
     // ActualPropertyPlaceholder
 }
