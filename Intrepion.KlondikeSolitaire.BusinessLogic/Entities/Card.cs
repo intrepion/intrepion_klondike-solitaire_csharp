@@ -10,5 +10,6 @@ public class Card
     public Rank? RankId { get; set; }
     public Suit? SuitId { get; set; }
     public ICollection<CardFoundation> CardFoundations { get; set; } = [];
+    public ICollection<CardStock> CardStocks { get; set; } = [];
     // ActualPropertyPlaceholder
 }
