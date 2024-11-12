@@ -27,6 +27,7 @@ public partial class FoundationAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Edit" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Foundation Edit");
 
+        await Page.GetByLabel("Pile Index:", new() { Exact = true }).FillAsync("2");
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
