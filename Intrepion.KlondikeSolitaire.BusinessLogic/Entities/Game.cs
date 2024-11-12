@@ -15,5 +15,6 @@ public class Game
     public ICollection<CardStock> CardStocks { get; set; } = [];
     public ICollection<CardWaste> CardWastes { get; set; } = [];
     public ICollection<Foundation> Foundations { get; set; } = [];
+    public ICollection<Move> Moves { get; set; } = [];
     // ActualPropertyPlaceholder
 }
