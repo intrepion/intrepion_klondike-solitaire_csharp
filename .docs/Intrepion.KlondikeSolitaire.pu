@@ -308,6 +308,7 @@ entity Tableau {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     GameId : Game
+    PuzzleId : Puzzle
     ' TableauKeyCodePlaceholder
     --
     PileIndex : int
