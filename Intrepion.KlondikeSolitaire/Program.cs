@@ -98,6 +98,9 @@ builder.Services.AddScoped<FoundationGridQueryAdapter>();
 builder.Services.AddScoped<IGameFilters, GameGridControls>();
 builder.Services.AddScoped<GameGridQueryAdapter>();
 
+builder.Services.AddScoped<IMoveFilters, MoveGridControls>();
+builder.Services.AddScoped<MoveGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
