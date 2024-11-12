@@ -17,6 +17,7 @@ public class CardWasteGridQueryAdapter
         {
             { CardWasteFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { CardWasteFilterColumns.Ordering, x => x != null ? x.Ordering.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
