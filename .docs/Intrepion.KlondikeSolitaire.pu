@@ -207,6 +207,7 @@ entity Move {
     Card1Id : Card
     Card2Id : Card
     Card3Id : Card
+    FromPileTypeId : PileType
     ' MoveKeyCodePlaceholder
     --
     FromPileIndex : int
