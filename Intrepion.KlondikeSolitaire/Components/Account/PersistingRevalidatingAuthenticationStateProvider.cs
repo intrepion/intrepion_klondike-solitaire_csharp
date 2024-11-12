@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Security.Claims;
-using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.Client;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
+using Intrepion.KlondikeSolitaire.Client;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
-namespace ApplicationNamePlaceholder.Components.Account;
+namespace Intrepion.KlondikeSolitaire.Components.Account;
 
 // This is a server-side AuthenticationStateProvider that revalidates the security stamp for the connected user
 // every 30 minutes an interactive circuit is connected. It also uses PersistentComponentState to flow the
