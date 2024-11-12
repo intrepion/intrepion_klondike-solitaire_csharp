@@ -4,7 +4,7 @@
 {
     <div class="row PileType-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentPileType.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/pile-type/edit/@CurrentPileType.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -70,7 +70,7 @@
         !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentPileType?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentPileType?.Id}";
+    private string ViewLink => $"admin/pile-type/view/{CurrentPileType?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
