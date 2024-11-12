@@ -192,6 +192,7 @@ CardTableau }o--|| Tableau
 CardWaste }o--|| ApplicationUser
 CardWaste }o--|| Card
 CardWaste }o--|| Game
+CardWaste }o--|| Puzzle
 ' RelationshipCodePlaceholder
 
 @enduml
