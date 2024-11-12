@@ -9,5 +9,6 @@ public class PileType
 
     public string Name { get; set; } = string.Empty;
     public ICollection<Move> MovesFromPileType { get; set; } = [];
+    public ICollection<Move> MovesToPileType { get; set; } = [];
     // ActualPropertyPlaceholder
 }
