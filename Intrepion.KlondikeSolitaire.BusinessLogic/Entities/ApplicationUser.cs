@@ -22,5 +22,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<CardWaste> UpdatedCardWastes { get; set; } = [];
     public ICollection<Foundation> UpdatedFoundations { get; set; } = [];
     public ICollection<Game> UpdatedGames { get; set; } = [];
+    public ICollection<Move> UpdatedMoves { get; set; } = [];
     // ActualPropertyPlaceholder
 }
