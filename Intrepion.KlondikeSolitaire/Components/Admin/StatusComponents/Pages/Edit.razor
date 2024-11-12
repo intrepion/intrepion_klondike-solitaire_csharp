@@ -6,11 +6,11 @@
 @inject IPageHelper PageHelper
 @inject EditSuccess EditSuccessState
 
-<PageTitle>HumanNamePlaceholder Edit</PageTitle>
+<PageTitle>Status Edit</PageTitle>
 
 @if (Status is null && !Busy)
 {
-    <p>Could not find HumanNamePlaceholder with id @StatusId.</p>
+    <p>Could not find Status with id @StatusId.</p>
 }
 else
 {
@@ -27,7 +27,7 @@ else
     <br />
     <div class="alert alert-danger">
         <p>
-            The HumanNamePlaceholder details have changed since it was last loaded. The updated fields are highlighted in the form.
+            The Status details have changed since it was last loaded. The updated fields are highlighted in the form.
             Please choose an option:
         </p>
         <p><b>Cancel</b> to lose your changes and keep the database version.</p>
@@ -38,12 +38,12 @@ else
 @if (Error)
 {
     <br />
-    <div class="alert alert-danger">Failed to update the HumanNamePlaceholder (@ErrorMessage).</div>
+    <div class="alert alert-danger">Failed to update the Status (@ErrorMessage).</div>
 }
 
 @code {
     /// <summary>
-    /// Id of HumanNamePlaceholder to edit
+    /// Id of Status to edit
     /// </summary>
     [Parameter]
     public Guid StatusId { get; set; }
@@ -157,7 +157,7 @@ else
 
             if (dbValues is null)
             {
-                // deleted - show HumanNamePlaceholder not found
+                // deleted - show Status not found
                 Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{Status.Id}");
                 return;
             }
