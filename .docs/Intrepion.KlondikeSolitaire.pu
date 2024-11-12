@@ -223,6 +223,7 @@ Foundation }o--|| ApplicationUser
 Foundation }o--|| Game
 Foundation }o--|| Puzzle
 Foundation }o--|| Suit
+Game }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
