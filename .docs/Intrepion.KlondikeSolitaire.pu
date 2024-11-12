@@ -179,6 +179,15 @@ entity Foundation {
     ' FoundationPropertyCodePlaceholder
 }
 
+entity Game {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' GameKeyCodePlaceholder
+    --
+    ' GamePropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
