@@ -15,5 +15,6 @@ public class Card
     public ICollection<CardWaste> CardWastes { get; set; } = [];
     public ICollection<Move> MovesAsCard1 { get; set; } = [];
     public ICollection<Move> MovesAsCard2 { get; set; } = [];
+    public ICollection<Move> MovesAsCard3 { get; set; } = [];
     // ActualPropertyPlaceholder
 }
