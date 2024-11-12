@@ -4,5 +4,6 @@ public enum CardTableauFilterColumns
 {
     Id,
 
+    Ordering,
     // FilterColumnCodePlaceholder
 }
