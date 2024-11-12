@@ -90,6 +90,9 @@ builder.Services.AddScoped<CardTableauGridQueryAdapter>();
 builder.Services.AddScoped<ICardWasteFilters, CardWasteGridControls>();
 builder.Services.AddScoped<CardWasteGridQueryAdapter>();
 
+builder.Services.AddScoped<IFoundationFilters, FoundationGridControls>();
+builder.Services.AddScoped<FoundationGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
