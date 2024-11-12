@@ -5,5 +5,6 @@ public enum MoveFilterColumns
     Id,
 
     FromPileIndex,
+    MoveTime,
     // FilterColumnCodePlaceholder
 }
