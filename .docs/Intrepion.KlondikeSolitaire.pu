@@ -169,6 +169,7 @@ entity Foundation {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    GameId : Game
     ' FoundationKeyCodePlaceholder
     --
     ' FoundationPropertyCodePlaceholder
