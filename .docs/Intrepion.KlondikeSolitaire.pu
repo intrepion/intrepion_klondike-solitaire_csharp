@@ -137,6 +137,15 @@ entity CardStock {
     ' CardStockPropertyCodePlaceholder
 }
 
+entity CardTableau {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' CardTableauKeyCodePlaceholder
+    --
+    ' CardTableauPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
