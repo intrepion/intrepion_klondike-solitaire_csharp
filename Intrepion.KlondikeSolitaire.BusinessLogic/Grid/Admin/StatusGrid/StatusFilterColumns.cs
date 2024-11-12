@@ -4,5 +4,6 @@ public enum StatusFilterColumns
 {
     Id,
 
+    Name,
     // FilterColumnCodePlaceholder
 }
