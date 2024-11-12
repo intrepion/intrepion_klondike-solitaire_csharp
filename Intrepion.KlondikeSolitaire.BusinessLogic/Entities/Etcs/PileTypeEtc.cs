@@ -7,10 +7,10 @@ public class PileTypeEtc : IEntityTypeConfiguration<PileType>
 {
     public void Configure(EntityTypeBuilder<PileType> builder)
     {
-        builder.ToTable("TableNamePlaceholder", x => x.IsTemporal());
+        builder.ToTable("PileTypes", x => x.IsTemporal());
 
         builder.HasOne(x => x.ApplicationUserUpdatedBy)
-            .WithMany(x => x.UpdatedTableNamePlaceholder)
+            .WithMany(x => x.UpdatedPileTypes)
             .OnDelete(DeleteBehavior.Restrict);
 
         // EntityConfigurationCodePlaceholder
