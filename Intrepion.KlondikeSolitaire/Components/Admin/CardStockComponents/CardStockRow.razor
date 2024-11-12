@@ -4,7 +4,7 @@
 {
     <div class="row CardStock-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentCardStock.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/card-stock/edit/@CurrentCardStock.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -70,7 +70,7 @@
         !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentCardStock?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentCardStock?.Id}";
+    private string ViewLink => $"admin/card-stock/view/{CurrentCardStock?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
