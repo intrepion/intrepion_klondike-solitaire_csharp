@@ -27,6 +27,7 @@ public partial class PileTypeAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Edit" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Pile Type Edit");
 
+        await Page.GetByLabel("Name:", new() { Exact = true }).FillAsync("someName" + someRandomString);
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
