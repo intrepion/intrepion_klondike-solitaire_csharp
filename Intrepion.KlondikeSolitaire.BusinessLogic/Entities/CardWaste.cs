@@ -7,5 +7,6 @@ public class CardWaste
     public ApplicationUser? ApplicationUserUpdatedBy { get; set; }
     public Guid Id { get; set; }
 
+    public Card? CardId { get; set; }
     // ActualPropertyPlaceholder
 }
