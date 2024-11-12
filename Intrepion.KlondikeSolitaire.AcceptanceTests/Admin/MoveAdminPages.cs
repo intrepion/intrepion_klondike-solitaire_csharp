@@ -19,6 +19,7 @@ public partial class MoveAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Move Add");
 
+        await Page.GetByLabel("From Pile Index:", new() { Exact = true }).FillAsync("1");
         // CreatePropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
