@@ -50,6 +50,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new RankEtc().Configure(builder.Entity<Rank>());
         new StatusEtc().Configure(builder.Entity<Status>());
         new SuitEtc().Configure(builder.Entity<Suit>());
+        new TableauEtc().Configure(builder.Entity<Tableau>());
         // EntityTypeCfgCodePlaceholder
     }
 }
