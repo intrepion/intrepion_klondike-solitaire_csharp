@@ -186,6 +186,7 @@ entity Game {
     ApplicationUserUpdatedBy : ApplicationUser
     ' GameKeyCodePlaceholder
     --
+    EndTime : DateTime
     ' GamePropertyCodePlaceholder
 }
 
