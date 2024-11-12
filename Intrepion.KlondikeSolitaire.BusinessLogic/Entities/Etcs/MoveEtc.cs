@@ -22,6 +22,9 @@ public class MoveEtc : IEntityTypeConfiguration<Move>
         builder.HasOne(x => x.Card3Id)
             .WithMany(x => x.MovesAsCard3)
             .OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(x => x.FromPileTypeId)
+            .WithMany(x => x.MovesFromPileType)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
