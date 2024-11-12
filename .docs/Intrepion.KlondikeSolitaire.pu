@@ -255,6 +255,7 @@ entity Puzzle {
     CardWastes : ICollection<CardWaste>
     Foundations : ICollection<Foundation>
     Games : ICollection<Game>
+    Tableaus : ICollection<Tableau>
     ' PuzzleKeyCodePlaceholder
     --
     Description : string
