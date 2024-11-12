@@ -225,6 +225,7 @@ entity PileType {
     ApplicationUserUpdatedBy : ApplicationUser
     ' PileTypeKeyCodePlaceholder
     --
+    Name : string
     ' PileTypePropertyCodePlaceholder
 }
 
