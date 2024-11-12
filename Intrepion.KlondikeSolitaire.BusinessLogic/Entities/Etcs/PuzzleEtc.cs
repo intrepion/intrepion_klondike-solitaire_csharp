@@ -7,10 +7,10 @@ public class PuzzleEtc : IEntityTypeConfiguration<Puzzle>
 {
     public void Configure(EntityTypeBuilder<Puzzle> builder)
     {
-        builder.ToTable("TableNamePlaceholder", x => x.IsTemporal());
+        builder.ToTable("Puzzles", x => x.IsTemporal());
 
         builder.HasOne(x => x.ApplicationUserUpdatedBy)
-            .WithMany(x => x.UpdatedTableNamePlaceholder)
+            .WithMany(x => x.UpdatedPuzzles)
             .OnDelete(DeleteBehavior.Restrict);
 
         // EntityConfigurationCodePlaceholder
