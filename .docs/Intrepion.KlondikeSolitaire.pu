@@ -186,6 +186,7 @@ entity Game {
     ApplicationUserUpdatedBy : ApplicationUser
     PlayerId : Player
     PuzzleId : Puzzle
+    StatusId : Status
     ' GameKeyCodePlaceholder
     --
     EndTime : DateTime
