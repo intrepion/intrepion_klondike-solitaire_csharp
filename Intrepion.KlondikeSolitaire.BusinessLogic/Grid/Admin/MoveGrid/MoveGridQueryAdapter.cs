@@ -3,29 +3,29 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
 
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.MoveGrid;
 
 // Creates the correct expressions to filter and sort.
-public class EntityNamePlaceholderGridQueryAdapter
+public class MoveGridQueryAdapter
 {
     // Holds state of the grid.
-    private readonly IEntityNamePlaceholderFilters controls;
+    private readonly IMoveFilters controls;
 
     // Expressions for sorting.
-    private readonly Dictionary<EntityNamePlaceholderFilterColumns, Expression<Func<EntityNamePlaceholder, string>>> expressions =
+    private readonly Dictionary<MoveFilterColumns, Expression<Func<Move, string>>> expressions =
         new()
         {
-            { EntityNamePlaceholderFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
+            { MoveFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
             // SortExpressionCodePlaceholder
         };
 
     // Queryables for filtering.
-    private readonly Dictionary<EntityNamePlaceholderFilterColumns, Func<IQueryable<EntityNamePlaceholder>, IQueryable<EntityNamePlaceholder>>> filterQueries = [];
+    private readonly Dictionary<MoveFilterColumns, Func<IQueryable<Move>, IQueryable<Move>>> filterQueries = [];
 
     // Creates a new instance of the GridQueryAdapter class.
-    // controls: The IEntityNamePlaceholderFilters" to use.
-    public EntityNamePlaceholderGridQueryAdapter(IEntityNamePlaceholderFilters controls)
+    // controls: The IMoveFilters" to use.
+    public MoveGridQueryAdapter(IMoveFilters controls)
     {
         this.controls = controls;
 
@@ -33,16 +33,16 @@ public class EntityNamePlaceholderGridQueryAdapter
         filterQueries =
             new()
             {
-                { EntityNamePlaceholderFilterColumns.Id, x => x.Where(y => y != null && !y.Id.Equals(Guid.Empty) && this.controls.FilterText != null && y.Id.ToString().Contains(this.controls.FilterText) ) },
+                { MoveFilterColumns.Id, x => x.Where(y => y != null && !y.Id.Equals(Guid.Empty) && this.controls.FilterText != null && y.Id.ToString().Contains(this.controls.FilterText) ) },
 
                 // QueryExpressionCodePlaceholder
             };
     }
 
     // Uses the query to return a count and a page.
-    // query: The IQueryable{EntityNamePlaceholder} to work from.
-    // Returns the resulting ICollection{EntityNamePlaceholder}.
-    public async Task<ICollection<EntityNamePlaceholder>> FetchAsync(IQueryable<EntityNamePlaceholder> query)
+    // query: The IQueryable{Move} to work from.
+    // Returns the resulting ICollection{Move}.
+    public async Task<ICollection<Move>> FetchAsync(IQueryable<Move> query)
     {
         query = FilterAndQuery(query);
         await CountAsync(query);
@@ -52,23 +52,23 @@ public class EntityNamePlaceholderGridQueryAdapter
     }
 
     // Get total filtered items count.
-    // query: The IQueryable{EntityNamePlaceholder} to use.
-    public async Task CountAsync(IQueryable<EntityNamePlaceholder> query) =>
+    // query: The IQueryable{Move} to use.
+    public async Task CountAsync(IQueryable<Move> query) =>
         controls.PageHelper.TotalItemCount = await query.CountAsync();
 
     // Build the query to bring back a single page.
-    // query: The <see IQueryable{EntityNamePlaceholder} to modify.
-    // Returns the new IQueryable{EntityNamePlaceholder} for a page.
-    public IQueryable<EntityNamePlaceholder> FetchPageQuery(IQueryable<EntityNamePlaceholder> query) =>
+    // query: The <see IQueryable{Move} to modify.
+    // Returns the new IQueryable{Move} for a page.
+    public IQueryable<Move> FetchPageQuery(IQueryable<Move> query) =>
         query
             .Skip(controls.PageHelper.Skip)
             .Take(controls.PageHelper.PageSize)
             .AsNoTracking();
 
     // Builds the query.
-    // root: The IQueryable{EntityNamePlaceholder} to start with.
-    // Returns the resulting IQueryable{EntityNamePlaceholder} with sorts and filters applied.
-    private IQueryable<EntityNamePlaceholder> FilterAndQuery(IQueryable<EntityNamePlaceholder> root)
+    // root: The IQueryable{Move} to start with.
+    // Returns the resulting IQueryable{Move} with sorts and filters applied.
+    private IQueryable<Move> FilterAndQuery(IQueryable<Move> root)
     {
         var sb = new System.Text.StringBuilder();
 
