@@ -143,6 +143,7 @@ entity CardTableau {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     CardId : Card
+    TableauId : Tableau
     ' CardTableauKeyCodePlaceholder
     --
     ' CardTableauPropertyCodePlaceholder
