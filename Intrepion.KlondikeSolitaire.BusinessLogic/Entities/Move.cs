@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Entities;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
 
 public class Move
 {
