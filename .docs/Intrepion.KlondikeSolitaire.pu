@@ -256,6 +256,7 @@ Move }o--|| ApplicationUser
 Move }o--|| Card
 Move }o--|| Card
 Move }o--|| Card
+Move }o--|| PileType
 ' RelationshipCodePlaceholder
 
 @enduml
