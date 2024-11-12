@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Entities.Configuration;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Entities.Configuration;
 
 public class MoveEtc : IEntityTypeConfiguration<Move>
 {
