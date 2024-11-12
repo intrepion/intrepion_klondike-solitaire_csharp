@@ -7,6 +7,13 @@
         <DataAnnotationsValidator />
         <ValidationSummary />
 
+        <h2>End Time</h2>
+        <p>
+            <label>
+                End Time:
+                <InputDate @bind-Value="Game.EndTime" @oninput="HandleEndTimeChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
