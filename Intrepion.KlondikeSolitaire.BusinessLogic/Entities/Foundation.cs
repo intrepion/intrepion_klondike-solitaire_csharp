@@ -10,5 +10,6 @@ public class Foundation
     public Game? GameId { get; set; }
     public int PileIndex { get; set; }
     public Puzzle? PuzzleId { get; set; }
+    public Suit? SuitId { get; set; }
     // ActualPropertyPlaceholder
 }
