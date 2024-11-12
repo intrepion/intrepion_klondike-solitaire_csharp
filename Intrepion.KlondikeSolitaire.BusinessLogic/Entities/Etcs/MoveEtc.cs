@@ -25,6 +25,9 @@ public class MoveEtc : IEntityTypeConfiguration<Move>
         builder.HasOne(x => x.FromPileTypeId)
             .WithMany(x => x.MovesFromPileType)
             .OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(x => x.GameId)
+            .WithMany(x => x.Moves)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
