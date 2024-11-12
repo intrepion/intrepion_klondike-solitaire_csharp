@@ -1,0 +1,109 @@
+@startuml
+
+entity ApplicationRole {
+    Id : Guid
+    --
+    ApplicationUserRoles : ICollection<ApplicationUserRole>
+    ApplicationUserUpdatedBy : ApplicationUser
+    --
+    ConcurrencyStamp : string
+    Name : string
+    NormalizedName : string
+}
+
+entity ApplicationRoleClaim {
+    Id : int
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    RoleId : Guid
+    --
+    ClaimType : string
+    ClaimValue : string
+}
+
+entity ApplicationUser {
+    Id : Guid
+    --
+    ApplicationUserRoles : ICollection<ApplicationUserRole>
+    ApplicationUserUpdatedBy : ApplicationUser
+    UpdatedApplicationRoles : ICollection<ApplicationRole>
+    UpdatedApplicationRoleClaims : ICollection<ApplicationRoleClaim>
+    UpdatedApplicationUsers : ICollection<ApplicationUser>
+    UpdatedApplicationUserClaims : ICollection<ApplicationUserClaim>
+    UpdatedApplicationUserLogins : ICollection<ApplicationUserLogin>
+    UpdatedApplicationUserRoles : ICollection<ApplicationUserRole>
+    UpdatedApplicationUserTokens : ICollection<ApplicationUserToken>
+    ' ApplicationUserKeyCodePlaceholder
+    --
+    AccessFailedCount : int
+    ConcurrencyStamp : string
+    Email : string
+    EmailConfirmed : bool
+    LockoutEnabled : bool
+    LockoutEnd : DateTimeOffset
+    NormalizedEmail : string
+    NormalizedUserName : string
+    PasswordHash : string
+    PhoneNumber : string
+    PhoneNumberConfirmed : bool
+    SecurityStamp : string
+    TwoFactorEnabled: bool
+    UserName : string
+}
+
+entity ApplicationUserClaim {
+    Id : int
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    UserId : Guid
+    --
+    ClaimType : string
+    ClaimValue : string
+}
+
+entity ApplicationUserLogin {
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    UserId : Guid
+    --
+    LoginProvider
+    ProviderDisplayName
+    ProviderKey
+}
+
+entity ApplicationUserRole {
+    --
+    ApplicationRole : ApplicationRole
+    ApplicationUser : ApplicationUser
+    ApplicationUserUpdatedBy : ApplicationUser
+    RoleId : Guid
+    UserId : Guid
+    --
+}
+
+entity ApplicationUserToken {
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    UserId : Guid
+    --
+    LoginProvider : string
+    Name : string
+    Value : string
+}
+
+' EntityCodePlaceholder
+
+ApplicationRole ||--o{ ApplicationUserRole
+ApplicationRole }o--|| ApplicationUser
+ApplicationRoleClaim }o--|| ApplicationRole
+ApplicationRoleClaim }o--|| ApplicationUser
+ApplicationUser }o--|| ApplicationUser
+ApplicationUser ||--o{ ApplicationUserRole
+ApplicationUserClaim }o--|| ApplicationUser
+ApplicationUserLogin }o--|| ApplicationUser
+ApplicationUserRole }o--|| ApplicationUser
+ApplicationUserToken }o--|| ApplicationUser
+
+' RelationshipCodePlaceholder
+
+@enduml
