@@ -97,6 +97,7 @@ entity Card {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     RankId : Rank
+    SuitId : Suit
     ' CardKeyCodePlaceholder
     --
     ' CardPropertyCodePlaceholder
