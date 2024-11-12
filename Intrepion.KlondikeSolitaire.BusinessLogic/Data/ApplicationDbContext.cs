@@ -28,6 +28,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new CardEtc().Configure(builder.Entity<Card>());
         new CardFoundationEtc().Configure(builder.Entity<CardFoundation>());
         new CardStockEtc().Configure(builder.Entity<CardStock>());
+        new CardTableauEtc().Configure(builder.Entity<CardTableau>());
         // EntityTypeCfgCodePlaceholder
     }
 }
