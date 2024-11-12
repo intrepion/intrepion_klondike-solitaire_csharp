@@ -13,6 +13,9 @@ public class PuzzleEtc : IEntityTypeConfiguration<Puzzle>
             .WithMany(x => x.UpdatedPuzzles)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.CreatorId)
+            .WithMany(x => x.Puzzles)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
