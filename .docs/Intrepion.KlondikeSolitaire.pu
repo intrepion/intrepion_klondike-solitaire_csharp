@@ -209,6 +209,7 @@ entity Move {
     Card3Id : Card
     ' MoveKeyCodePlaceholder
     --
+    FromPileIndex : int
     ' MovePropertyCodePlaceholder
 }
 
