@@ -23,5 +23,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<Foundation> UpdatedFoundations { get; set; } = [];
     public ICollection<Game> UpdatedGames { get; set; } = [];
     public ICollection<Move> UpdatedMoves { get; set; } = [];
+    public ICollection<PileType> UpdatedPileTypes { get; set; } = [];
     // ActualPropertyPlaceholder
 }
