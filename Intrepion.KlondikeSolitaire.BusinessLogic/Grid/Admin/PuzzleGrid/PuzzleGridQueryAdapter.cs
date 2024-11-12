@@ -20,6 +20,7 @@ public class PuzzleGridQueryAdapter
             { PuzzleFilterColumns.Description, x => x != null && x.Description != null ? x.Description : string.Empty },
             { PuzzleFilterColumns.IsPublic, x => x != null ? x.IsPublic.ToString() : string.Empty },
             { PuzzleFilterColumns.Name, x => x != null && x.Name != null ? x.Name : string.Empty },
+            { PuzzleFilterColumns.PublishTime, x => x != null ? x.PublishTime.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
