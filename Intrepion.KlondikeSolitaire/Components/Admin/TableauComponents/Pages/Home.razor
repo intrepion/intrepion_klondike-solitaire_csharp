@@ -44,6 +44,10 @@
                 <SortIndicator Column="@(TableauFilterColumns.Id)" />&nbsp;Id
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(TableauFilterColumns.PileIndex))">
+                <SortIndicator Column="@(TableauFilterColumns.PileIndex)" />&nbsp;PileIndex
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
