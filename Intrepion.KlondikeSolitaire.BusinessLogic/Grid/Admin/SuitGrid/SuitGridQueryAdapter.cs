@@ -17,6 +17,7 @@ public class SuitGridQueryAdapter
         {
             { SuitFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { SuitFilterColumns.Code, x => x != null && x.Code != null ? x.Code : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
