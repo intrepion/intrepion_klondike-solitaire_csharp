@@ -5,5 +5,6 @@ public enum GameFilterColumns
     Id,
 
     EndTime,
+    StartTime,
     // FilterColumnCodePlaceholder
 }
