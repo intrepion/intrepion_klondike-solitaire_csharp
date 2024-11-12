@@ -11,6 +11,7 @@ using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardTableauGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardWasteGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.FoundationGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.GameGrid;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.MoveGrid;
 // GridNamespaceCodePlaceholder
 
 using ApplicationNamePlaceholder.Components;
