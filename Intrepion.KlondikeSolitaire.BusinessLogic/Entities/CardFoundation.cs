@@ -8,5 +8,6 @@ public class CardFoundation
     public Guid Id { get; set; }
 
     public Card? Card { get; set; }
+    public Foundation? Foundation { get; set; }
     // ActualPropertyPlaceholder
 }
