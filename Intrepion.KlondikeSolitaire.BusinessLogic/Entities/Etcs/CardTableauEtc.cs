@@ -13,6 +13,9 @@ public class CardTableauEtc : IEntityTypeConfiguration<CardTableau>
             .WithMany(x => x.UpdatedCardTableaus)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.CardId)
+            .WithMany(x => x.CardTableaus)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
