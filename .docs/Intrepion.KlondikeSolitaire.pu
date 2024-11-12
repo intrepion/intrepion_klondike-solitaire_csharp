@@ -164,6 +164,15 @@ entity CardWaste {
     ' CardWastePropertyCodePlaceholder
 }
 
+entity Foundation {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' FoundationKeyCodePlaceholder
+    --
+    ' FoundationPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
