@@ -265,6 +265,15 @@ entity Puzzle {
     ' PuzzlePropertyCodePlaceholder
 }
 
+entity Rank {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' RankKeyCodePlaceholder
+    --
+    ' RankPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
