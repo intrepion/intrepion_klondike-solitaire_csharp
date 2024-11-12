@@ -191,6 +191,7 @@ entity Game {
     CardWastes : ICollection<CardWaste>
     Foundations : ICollection<Foundation>
     Moves : ICollection<Move>
+    Tableaus : ICollection<Tableau>
     ' GameKeyCodePlaceholder
     --
     EndTime : DateTime
