@@ -29,6 +29,7 @@ public partial class PuzzleAdminPages : PageTest
         await Expect(Page).ToHaveTitleAsync("Puzzle Edit");
 
         await Page.GetByLabel("Description:", new() { Exact = true }).FillAsync("someDescription" + someRandomString);
+        await Page.GetByLabel("Is Public:", new() { Exact = true }).CheckAsync();
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
