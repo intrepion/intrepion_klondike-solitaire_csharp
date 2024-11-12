@@ -1,8 +1,8 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Data;
-using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.BusinessLogic.Grid;
-using ApplicationNamePlaceholder.BusinessLogic.Grid.Admin.ApplicationRoleGrid;
-using ApplicationNamePlaceholder.BusinessLogic.Grid.Admin.ApplicationUserGrid;
+﻿using Intrepion.KlondikeSolitaire.BusinessLogic.Data;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationRoleGrid;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationUserGrid;
 
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardFoundationGrid;
@@ -21,8 +21,8 @@ using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.SuitGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.TableauGrid;
 // GridNamespaceCodePlaceholder
 
-using ApplicationNamePlaceholder.Components;
-using ApplicationNamePlaceholder.Components.Account;
+using Intrepion.KlondikeSolitaire.Components;
+using Intrepion.KlondikeSolitaire.Components.Account;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -162,7 +162,7 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(ApplicationNamePlaceholder.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Intrepion.KlondikeSolitaire.Client._Imports).Assembly);
 
 app.MapAdditionalIdentityEndpoints();
 
