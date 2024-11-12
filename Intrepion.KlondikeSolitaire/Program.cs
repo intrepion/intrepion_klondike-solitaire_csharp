@@ -78,6 +78,9 @@ builder.Services.AddScoped<CardGridQueryAdapter>();
 builder.Services.AddScoped<ICardFoundationFilters, CardFoundationGridControls>();
 builder.Services.AddScoped<CardFoundationGridQueryAdapter>();
 
+builder.Services.AddScoped<ICardStockFilters, CardStockGridControls>();
+builder.Services.AddScoped<CardStockGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
