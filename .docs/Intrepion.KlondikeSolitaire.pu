@@ -102,6 +102,7 @@ entity Card {
     CardStocks : ICollection<CardStock>
     CardTableaus : ICollection<CardTableau>
     CardWastes : ICollection<CardWaste>
+    MovesAsCard1 : ICollection<Move>
     ' CardKeyCodePlaceholder
     --
     ' CardPropertyCodePlaceholder
