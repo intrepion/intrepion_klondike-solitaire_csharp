@@ -283,6 +283,7 @@ entity Status {
     ApplicationUserUpdatedBy : ApplicationUser
     ' StatusKeyCodePlaceholder
     --
+    Name : string
     ' StatusPropertyCodePlaceholder
 }
 
