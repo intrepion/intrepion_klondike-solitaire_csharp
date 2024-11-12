@@ -19,6 +19,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Player> Players { get; set; }
     public DbSet<Puzzle> Puzzles { get; set; }
     public DbSet<Rank> Ranks { get; set; }
+    public DbSet<Status> Statuses { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
