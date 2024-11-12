@@ -13,5 +13,6 @@ public class Puzzle
     public string Name { get; set; } = string.Empty;
     public DateTime PublishTime { get; set; }
     public ICollection<CardStock> CardStocks { get; set; } = [];
+    public ICollection<CardWaste> CardWastes { get; set; } = [];
     // ActualPropertyPlaceholder
 }
