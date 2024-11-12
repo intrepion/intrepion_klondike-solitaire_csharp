@@ -223,6 +223,7 @@ entity PileType {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    MovesFromPileType : ICollection<Move>
     ' PileTypeKeyCodePlaceholder
     --
     Name : string
