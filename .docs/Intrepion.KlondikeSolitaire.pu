@@ -253,6 +253,7 @@ entity Puzzle {
     CreatorId : Player
     CardStocks : ICollection<CardStock>
     CardWastes : ICollection<CardWaste>
+    Foundations : ICollection<Foundation>
     ' PuzzleKeyCodePlaceholder
     --
     Description : string
