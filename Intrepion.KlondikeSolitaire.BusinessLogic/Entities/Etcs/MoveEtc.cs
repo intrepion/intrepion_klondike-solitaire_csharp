@@ -13,6 +13,9 @@ public class MoveEtc : IEntityTypeConfiguration<Move>
             .WithMany(x => x.UpdatedMoves)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.Card1Id)
+            .WithMany(x => x.MovesAsCard1)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
