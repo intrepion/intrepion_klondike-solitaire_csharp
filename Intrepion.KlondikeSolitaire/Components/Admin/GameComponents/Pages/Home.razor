@@ -1,10 +1,10 @@
 @page "/admin/UrlNamePlaceholder"
 @page "/admin/UrlNamePlaceholder/{Page:int}"
 @rendermode InteractiveServer
-@inject IEntityNamePlaceholderFilters Filters
+@inject IGameFilters Filters
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
 @inject NavigationManager Navigation
-@inject EntityNamePlaceholderGridQueryAdapter QueryAdapter
+@inject GameGridQueryAdapter QueryAdapter
 
 <PageTitle>HumanNamePlaceholder Home</PageTitle>
 
@@ -40,14 +40,14 @@
         <div class="row LowercaseNamePlaceholder-header">
             <div class="col-2">&nbsp;</div>
             <div class="col-3"
-                @onclick="@(async ()=>await ToggleAsync(EntityNamePlaceholderFilterColumns.Id))">
-                <SortIndicator Column="@(EntityNamePlaceholderFilterColumns.Id)" />&nbsp;Id
+                @onclick="@(async ()=>await ToggleAsync(GameFilterColumns.Id))">
+                <SortIndicator Column="@(GameFilterColumns.Id)" />&nbsp;Id
             </div>
 
             @* SortIndicatorCodePlaceholder *@
 
         </div>
-        @if (Filters.Loading || EntityNamePlaceholders is null)
+        @if (Filters.Loading || Games is null)
         {
             <div class="row">
                 <div class="col-12 alert alert-info">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         }
-        @if (EntityNamePlaceholders is not null && EntityNamePlaceholders.Count == 0)
+        @if (Games is not null && Games.Count == 0)
         {
             <div class="row">
                 <div class="col-12 alert alert-warning">
@@ -63,12 +63,12 @@
                 </div>
             </div>
         }
-        @if (EntityNamePlaceholders is not null)
+        @if (Games is not null)
         {
-            @foreach (var LowercaseNamePlaceholder in EntityNamePlaceholders)
+            @foreach (var LowercaseNamePlaceholder in Games)
             {
-                <EntityNamePlaceholderRow @key=LowercaseNamePlaceholder CurrentEntityNamePlaceholder="LowercaseNamePlaceholder"
-                            DeleteEntityNamePlaceholder="DeleteEntityNamePlaceholderAsync" />
+                <GameRow @key=LowercaseNamePlaceholder CurrentGame="LowercaseNamePlaceholder"
+                            DeleteGame="DeleteGameAsync" />
             }
         }
     </div>
@@ -89,8 +89,8 @@
     // A wrapper for grid-related activity (like delete).
     private GridWrapper Wrapper { get; set; } = new GridWrapper();
 
-    // Current page of EntityNamePlaceholder.
-    private ICollection<EntityNamePlaceholder>? EntityNamePlaceholders { get; set; }
+    // Current page of Game.
+    private ICollection<Game>? Games { get; set; }
 
     // Helper method to set disabled on class for paging.
     // condition: When the element is active (and therefore should not be disabled).
@@ -141,7 +141,7 @@
     // Used to toggle the grid sort. Will either switch to "ascending" on a new
     // column, or toggle between "ascending" and "descending" on a column with the
     // sort already set.
-    private Task ToggleAsync(EntityNamePlaceholderFilterColumns col)
+    private Task ToggleAsync(GameFilterColumns col)
     {
         if (Filters.SortColumn == col)
         {
@@ -156,7 +156,7 @@
 
     // Deletes a HumanNamePlaceholder.
     // <snippet1>
-    private async Task DeleteEntityNamePlaceholderAsync()
+    private async Task DeleteGameAsync()
     {
         using var context = DbFactory.CreateDbContext();
         Filters.Loading = true;
@@ -194,7 +194,7 @@
             Wrapper.DeleteRequestId = Guid.Empty;
         }
 
-        EntityNamePlaceholders = new List<EntityNamePlaceholder>();
+        Games = new List<Game>();
 
         using var context = DbFactory.CreateDbContext();
         var query = context.TableNamePlaceholder?.AsQueryable();
@@ -202,7 +202,7 @@
         if (query is not null)
         {
             // Run the query to load the current page.
-            EntityNamePlaceholders = await QueryAdapter.FetchAsync(query);
+            Games = await QueryAdapter.FetchAsync(query);
         }
 
         Filters.Loading = false;
