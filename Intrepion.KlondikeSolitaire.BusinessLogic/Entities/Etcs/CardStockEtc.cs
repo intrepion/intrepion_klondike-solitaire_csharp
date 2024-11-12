@@ -19,6 +19,9 @@ public class CardStockEtc : IEntityTypeConfiguration<CardStock>
         builder.HasOne(x => x.GameId)
             .WithMany(x => x.CardStocks)
             .OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(x => x.PuzzleId)
+            .WithMany(x => x.CardStocks)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
