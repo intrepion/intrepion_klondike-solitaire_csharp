@@ -302,6 +302,15 @@ entity Suit {
     ' SuitPropertyCodePlaceholder
 }
 
+entity Tableau {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' TableauKeyCodePlaceholder
+    --
+    ' TableauPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
