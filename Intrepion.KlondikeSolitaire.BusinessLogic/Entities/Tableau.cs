@@ -10,5 +10,6 @@ public class Tableau
     public Game? GameId { get; set; }
     public int PileIndex { get; set; }
     public Puzzle? PuzzleId { get; set; }
+    public ICollection<CardTableau> CardTableaus { get; set; } = [];
     // ActualPropertyPlaceholder
 }
