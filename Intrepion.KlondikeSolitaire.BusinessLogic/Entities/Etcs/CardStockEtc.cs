@@ -7,10 +7,10 @@ public class CardStockEtc : IEntityTypeConfiguration<CardStock>
 {
     public void Configure(EntityTypeBuilder<CardStock> builder)
     {
-        builder.ToTable("TableNamePlaceholder", x => x.IsTemporal());
+        builder.ToTable("CardStocks", x => x.IsTemporal());
 
         builder.HasOne(x => x.ApplicationUserUpdatedBy)
-            .WithMany(x => x.UpdatedTableNamePlaceholder)
+            .WithMany(x => x.UpdatedCardStocks)
             .OnDelete(DeleteBehavior.Restrict);
 
         // EntityConfigurationCodePlaceholder
