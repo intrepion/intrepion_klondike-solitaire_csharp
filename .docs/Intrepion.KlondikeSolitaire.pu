@@ -303,6 +303,7 @@ Move }o--|| PileType
 PileType }o--|| ApplicationUser
 Player }o--|| ApplicationUser
 Player }o--|| ApplicationUser
+Puzzle }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
