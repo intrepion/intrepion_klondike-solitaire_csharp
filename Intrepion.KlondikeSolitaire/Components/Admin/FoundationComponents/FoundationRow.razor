@@ -4,7 +4,7 @@
 {
     <div class="row Foundation-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentFoundation.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/foundation/edit/@CurrentFoundation.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -70,7 +70,7 @@
         !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentFoundation?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentFoundation?.Id}";
+    private string ViewLink => $"admin/foundation/view/{CurrentFoundation?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
