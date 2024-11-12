@@ -3,29 +3,29 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
 
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardFoundationGrid;
 
 // Creates the correct expressions to filter and sort.
-public class EntityNamePlaceholderGridQueryAdapter
+public class CardFoundationGridQueryAdapter
 {
     // Holds state of the grid.
-    private readonly IEntityNamePlaceholderFilters controls;
+    private readonly ICardFoundationFilters controls;
 
     // Expressions for sorting.
-    private readonly Dictionary<EntityNamePlaceholderFilterColumns, Expression<Func<EntityNamePlaceholder, string>>> expressions =
+    private readonly Dictionary<CardFoundationFilterColumns, Expression<Func<CardFoundation, string>>> expressions =
         new()
         {
-            { EntityNamePlaceholderFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
+            { CardFoundationFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
             // SortExpressionCodePlaceholder
         };
 
     // Queryables for filtering.
-    private readonly Dictionary<EntityNamePlaceholderFilterColumns, Func<IQueryable<EntityNamePlaceholder>, IQueryable<EntityNamePlaceholder>>> filterQueries = [];
+    private readonly Dictionary<CardFoundationFilterColumns, Func<IQueryable<CardFoundation>, IQueryable<CardFoundation>>> filterQueries = [];
 
     // Creates a new instance of the GridQueryAdapter class.
-    // controls: The IEntityNamePlaceholderFilters" to use.
-    public EntityNamePlaceholderGridQueryAdapter(IEntityNamePlaceholderFilters controls)
+    // controls: The ICardFoundationFilters" to use.
+    public CardFoundationGridQueryAdapter(ICardFoundationFilters controls)
     {
         this.controls = controls;
 
@@ -33,16 +33,16 @@ public class EntityNamePlaceholderGridQueryAdapter
         filterQueries =
             new()
             {
-                { EntityNamePlaceholderFilterColumns.Id, x => x.Where(y => y != null && !y.Id.Equals(Guid.Empty) && this.controls.FilterText != null && y.Id.ToString().Contains(this.controls.FilterText) ) },
+                { CardFoundationFilterColumns.Id, x => x.Where(y => y != null && !y.Id.Equals(Guid.Empty) && this.controls.FilterText != null && y.Id.ToString().Contains(this.controls.FilterText) ) },
 
                 // QueryExpressionCodePlaceholder
             };
     }
 
     // Uses the query to return a count and a page.
-    // query: The IQueryable{EntityNamePlaceholder} to work from.
-    // Returns the resulting ICollection{EntityNamePlaceholder}.
-    public async Task<ICollection<EntityNamePlaceholder>> FetchAsync(IQueryable<EntityNamePlaceholder> query)
+    // query: The IQueryable{CardFoundation} to work from.
+    // Returns the resulting ICollection{CardFoundation}.
+    public async Task<ICollection<CardFoundation>> FetchAsync(IQueryable<CardFoundation> query)
     {
         query = FilterAndQuery(query);
         await CountAsync(query);
@@ -52,23 +52,23 @@ public class EntityNamePlaceholderGridQueryAdapter
     }
 
     // Get total filtered items count.
-    // query: The IQueryable{EntityNamePlaceholder} to use.
-    public async Task CountAsync(IQueryable<EntityNamePlaceholder> query) =>
+    // query: The IQueryable{CardFoundation} to use.
+    public async Task CountAsync(IQueryable<CardFoundation> query) =>
         controls.PageHelper.TotalItemCount = await query.CountAsync();
 
     // Build the query to bring back a single page.
-    // query: The <see IQueryable{EntityNamePlaceholder} to modify.
-    // Returns the new IQueryable{EntityNamePlaceholder} for a page.
-    public IQueryable<EntityNamePlaceholder> FetchPageQuery(IQueryable<EntityNamePlaceholder> query) =>
+    // query: The <see IQueryable{CardFoundation} to modify.
+    // Returns the new IQueryable{CardFoundation} for a page.
+    public IQueryable<CardFoundation> FetchPageQuery(IQueryable<CardFoundation> query) =>
         query
             .Skip(controls.PageHelper.Skip)
             .Take(controls.PageHelper.PageSize)
             .AsNoTracking();
 
     // Builds the query.
-    // root: The IQueryable{EntityNamePlaceholder} to start with.
-    // Returns the resulting IQueryable{EntityNamePlaceholder} with sorts and filters applied.
-    private IQueryable<EntityNamePlaceholder> FilterAndQuery(IQueryable<EntityNamePlaceholder> root)
+    // root: The IQueryable{CardFoundation} to start with.
+    // Returns the resulting IQueryable{CardFoundation} with sorts and filters applied.
+    private IQueryable<CardFoundation> FilterAndQuery(IQueryable<CardFoundation> root)
     {
         var sb = new System.Text.StringBuilder();
 
