@@ -154,6 +154,7 @@ CardFoundation }o--|| ApplicationUser
 CardFoundation }o--|| Card
 CardFoundation }o--|| Foundation
 CardStock }o--|| ApplicationUser
+CardStock }o--|| Card
 ' RelationshipCodePlaceholder
 
 @enduml
