@@ -7,6 +7,7 @@ using ApplicationNamePlaceholder.BusinessLogic.Grid.Admin.ApplicationUserGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardFoundationGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardStockGrid;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardTableauGrid;
 // GridNamespaceCodePlaceholder
 
 using ApplicationNamePlaceholder.Components;
