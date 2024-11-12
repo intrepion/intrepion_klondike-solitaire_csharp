@@ -171,6 +171,7 @@ entity Foundation {
     ApplicationUserUpdatedBy : ApplicationUser
     GameId : Game
     PuzzleId : Puzzle
+    SuitId : Suit
     ' FoundationKeyCodePlaceholder
     --
     PileIndex : int
