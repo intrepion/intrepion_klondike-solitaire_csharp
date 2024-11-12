@@ -10,5 +10,6 @@ public class CardWaste
     public Card? CardId { get; set; }
     public Game? GameId { get; set; }
     public Puzzle? PuzzleId { get; set; }
+    public int Ordering { get; set; }
     // ActualPropertyPlaceholder
 }
