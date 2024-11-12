@@ -1,10 +1,10 @@
-@inject IEntityNamePlaceholderFilters Filters
+@inject IGameFilters Filters
 
-@if (CurrentEntityNamePlaceholder is not null)
+@if (CurrentGame is not null)
 {
-    <div class="row EntityNamePlaceholder-detail">
+    <div class="row Game-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentEntityNamePlaceholder.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentGame.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -22,7 +22,7 @@
         <div class="col-3">
             <a href="@ViewLink" alt="View Details"
                title="View Details">
-                @CurrentEntityNamePlaceholder.Id
+                @CurrentGame.Id
             </a>
         </div>
 
@@ -40,18 +40,18 @@
 }
 
 @code {
-    private EntityNamePlaceholder _currentEntityNamePlaceholder = new EntityNamePlaceholder();
+    private Game _currentGame = new Game();
 
-    // EntityNamePlaceholder being rendered.
+    // Game being rendered.
     [Parameter]
-    public EntityNamePlaceholder CurrentEntityNamePlaceholder
+    public Game CurrentGame
     {
-        get => _currentEntityNamePlaceholder;
+        get => _currentGame;
         set
         {
-            if (value is not null && !value.Equals(_currentEntityNamePlaceholder))
+            if (value is not null && !value.Equals(_currentGame))
             {
-                _currentEntityNamePlaceholder = value;
+                _currentGame = value;
                 DeleteConfirmation = false;
             }
         }
@@ -59,7 +59,7 @@
 
     // Event to raise when a HumanNamePlaceholder delete is requested.
     [Parameter]
-    public EventCallback DeleteEntityNamePlaceholder { get; set; }
+    public EventCallback DeleteGame { get; set; }
 
     // Overall wrapper of functionality.
     [CascadingParameter]
@@ -67,10 +67,10 @@
 
     // Returns True if conditions for delete are met.
     private bool CanDelete =>
-        !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentEntityNamePlaceholder?.Id) == true);
+        !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentGame?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentEntityNamePlaceholder?.Id}";
+    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentGame?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
@@ -100,10 +100,10 @@
         if (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true)
         {
             DeleteConfirmation = true;
-            await Wrapper.DeleteRequested.InvokeAsync(CurrentEntityNamePlaceholder.Id);
+            await Wrapper.DeleteRequested.InvokeAsync(CurrentGame.Id);
         }
     }
 
-    // Deletes the EntityNamePlaceholder.
-    private Task DeleteAsync() => DeleteEntityNamePlaceholder.InvokeAsync(this);
+    // Deletes the Game.
+    private Task DeleteAsync() => DeleteGame.InvokeAsync(this);
 }
