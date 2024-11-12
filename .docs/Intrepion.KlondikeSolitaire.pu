@@ -44,6 +44,7 @@ entity ApplicationUser {
     UpdatedPileTypes : ICollection<PileType>
     UpdatedPlayers : ICollection<Player>
     Player : ICollection<Player>
+    UpdatedPuzzles : ICollection<Puzzle>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
