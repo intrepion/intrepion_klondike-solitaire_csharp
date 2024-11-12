@@ -123,6 +123,15 @@ entity CardFoundation {
     ' CardFoundationPropertyCodePlaceholder
 }
 
+entity CardStock {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' CardStockKeyCodePlaceholder
+    --
+    ' CardStockPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
