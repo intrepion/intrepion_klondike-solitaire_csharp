@@ -19,6 +19,7 @@ public partial class StatusAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Status Add");
 
+        await Page.GetByLabel("Name:", new() { Exact = true }).FillAsync("aName" + aRandomString);
         // CreatePropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
