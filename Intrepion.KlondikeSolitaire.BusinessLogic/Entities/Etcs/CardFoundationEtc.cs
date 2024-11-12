@@ -13,6 +13,9 @@ public class CardFoundationEtc : IEntityTypeConfiguration<CardFoundation>
             .WithMany(x => x.UpdatedCardFoundations)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.Card)
+            .WithMany(x => x.CardFoundations)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
