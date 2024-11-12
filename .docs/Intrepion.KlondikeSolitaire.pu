@@ -231,6 +231,7 @@ Foundation }o--|| Suit
 Game }o--|| ApplicationUser
 Game }o--|| Player
 Game }o--|| Puzzle
+Game }o--|| Status
 ' RelationshipCodePlaceholder
 
 @enduml
