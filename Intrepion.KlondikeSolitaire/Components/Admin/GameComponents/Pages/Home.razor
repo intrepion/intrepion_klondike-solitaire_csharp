@@ -48,6 +48,10 @@
                 <SortIndicator Column="@(GameFilterColumns.EndTime)" />&nbsp;EndTime
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(GameFilterColumns.StartTime))">
+                <SortIndicator Column="@(GameFilterColumns.StartTime)" />&nbsp;StartTime
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
