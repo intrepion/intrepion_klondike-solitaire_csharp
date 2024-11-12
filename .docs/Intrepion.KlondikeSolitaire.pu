@@ -296,6 +296,7 @@ entity Suit {
     ' SuitKeyCodePlaceholder
     --
     Code : string
+    Name : string
     ' SuitPropertyCodePlaceholder
 }
 
