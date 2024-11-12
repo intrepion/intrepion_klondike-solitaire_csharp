@@ -276,6 +276,15 @@ entity Rank {
     ' RankPropertyCodePlaceholder
 }
 
+entity Status {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' StatusKeyCodePlaceholder
+    --
+    ' StatusPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
