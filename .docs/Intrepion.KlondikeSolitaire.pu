@@ -186,6 +186,7 @@ CardStock }o--|| Puzzle
 CardTableau }o--|| ApplicationUser
 CardTableau }o--|| Card
 CardTableau }o--|| Tableau
+CardWaste }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
