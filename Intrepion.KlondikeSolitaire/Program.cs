@@ -110,6 +110,9 @@ builder.Services.AddScoped<PileTypeGridQueryAdapter>();
 builder.Services.AddScoped<IPlayerFilters, PlayerGridControls>();
 builder.Services.AddScoped<PlayerGridQueryAdapter>();
 
+builder.Services.AddScoped<IPuzzleFilters, PuzzleGridControls>();
+builder.Services.AddScoped<PuzzleGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
