@@ -29,5 +29,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<Puzzle> UpdatedPuzzles { get; set; } = [];
     public ICollection<Rank> UpdatedRanks { get; set; } = [];
     public ICollection<Status> UpdatedStatuses { get; set; } = [];
+    public ICollection<Suit> UpdatedSuits { get; set; } = [];
     // ActualPropertyPlaceholder
 }
