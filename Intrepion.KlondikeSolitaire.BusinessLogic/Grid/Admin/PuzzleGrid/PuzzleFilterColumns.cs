@@ -5,5 +5,6 @@ public enum PuzzleFilterColumns
     Id,
 
     Description,
+    IsPublic,
     // FilterColumnCodePlaceholder
 }
