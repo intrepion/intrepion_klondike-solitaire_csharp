@@ -19,5 +19,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<CardFoundation> UpdatedCardFoundations { get; set; } = [];
     public ICollection<CardStock> UpdatedCardStocks { get; set; } = [];
     public ICollection<CardTableau> UpdatedCardTableaus { get; set; } = [];
+    public ICollection<CardWaste> UpdatedCardWastes { get; set; } = [];
     // ActualPropertyPlaceholder
 }
