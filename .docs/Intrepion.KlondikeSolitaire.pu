@@ -245,6 +245,15 @@ entity Player {
     ' PlayerPropertyCodePlaceholder
 }
 
+entity Puzzle {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' PuzzleKeyCodePlaceholder
+    --
+    ' PuzzlePropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
