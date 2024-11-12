@@ -98,6 +98,7 @@ entity Card {
     ApplicationUserUpdatedBy : ApplicationUser
     RankId : Rank
     SuitId : Suit
+    CardFoundations : ICollection<CardFoundation>
     ' CardKeyCodePlaceholder
     --
     ' CardPropertyCodePlaceholder
