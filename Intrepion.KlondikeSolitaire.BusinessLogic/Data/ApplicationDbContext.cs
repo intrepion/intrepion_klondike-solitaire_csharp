@@ -12,6 +12,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<CardStock> CardStocks { get; set; }
     public DbSet<CardTableau> CardTableaus { get; set; }
     public DbSet<CardWaste> CardWastes { get; set; }
+    public DbSet<Foundation> Foundations { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
