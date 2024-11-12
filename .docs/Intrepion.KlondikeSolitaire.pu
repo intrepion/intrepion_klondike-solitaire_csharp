@@ -273,6 +273,7 @@ Move }o--|| Card
 Move }o--|| PileType
 Move }o--|| Game
 Move }o--|| PileType
+PileType }o--|| ApplicationUser
 ' RelationshipCodePlaceholder
 
 @enduml
