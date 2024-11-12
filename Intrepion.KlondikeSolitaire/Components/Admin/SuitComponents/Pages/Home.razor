@@ -48,6 +48,10 @@
                 <SortIndicator Column="@(SuitFilterColumns.Code)" />&nbsp;Code
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(SuitFilterColumns.Name))">
+                <SortIndicator Column="@(SuitFilterColumns.Name)" />&nbsp;Name
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
