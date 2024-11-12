@@ -18,6 +18,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<PileType> PileTypes { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Puzzle> Puzzles { get; set; }
+    public DbSet<Rank> Ranks { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
