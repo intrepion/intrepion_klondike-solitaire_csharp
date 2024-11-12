@@ -7,6 +7,13 @@
         <DataAnnotationsValidator />
         <ValidationSummary />
 
+        <h2>Code</h2>
+        <p>
+            <label>
+                Code:
+                <InputText @bind-Value="Suit.Code" @oninput="HandleCodeChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
