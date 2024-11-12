@@ -4,5 +4,6 @@ public enum TableauFilterColumns
 {
     Id,
 
+    PileIndex,
     // FilterColumnCodePlaceholder
 }
