@@ -4,5 +4,6 @@ public enum PuzzleFilterColumns
 {
     Id,
 
+    Description,
     // FilterColumnCodePlaceholder
 }
