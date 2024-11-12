@@ -231,6 +231,15 @@ entity PileType {
     ' PileTypePropertyCodePlaceholder
 }
 
+entity Player {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' PlayerKeyCodePlaceholder
+    --
+    ' PlayerPropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
