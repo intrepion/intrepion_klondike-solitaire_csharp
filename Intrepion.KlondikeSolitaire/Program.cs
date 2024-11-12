@@ -94,6 +94,9 @@ builder.Services.AddScoped<CardWasteGridQueryAdapter>();
 builder.Services.AddScoped<IFoundationFilters, FoundationGridControls>();
 builder.Services.AddScoped<FoundationGridQueryAdapter>();
 
+builder.Services.AddScoped<IGameFilters, GameGridControls>();
+builder.Services.AddScoped<GameGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
