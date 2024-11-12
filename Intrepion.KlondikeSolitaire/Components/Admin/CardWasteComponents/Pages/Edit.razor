@@ -6,11 +6,11 @@
 @inject IPageHelper PageHelper
 @inject EditSuccess EditSuccessState
 
-<PageTitle>HumanNamePlaceholder Edit</PageTitle>
+<PageTitle>Card Waste Edit</PageTitle>
 
 @if (CardWaste is null && !Busy)
 {
-    <p>Could not find HumanNamePlaceholder with id @CardWasteId.</p>
+    <p>Could not find Card Waste with id @CardWasteId.</p>
 }
 else
 {
@@ -27,7 +27,7 @@ else
     <br />
     <div class="alert alert-danger">
         <p>
-            The HumanNamePlaceholder details have changed since it was last loaded. The updated fields are highlighted in the form.
+            The Card Waste details have changed since it was last loaded. The updated fields are highlighted in the form.
             Please choose an option:
         </p>
         <p><b>Cancel</b> to lose your changes and keep the database version.</p>
@@ -38,12 +38,12 @@ else
 @if (Error)
 {
     <br />
-    <div class="alert alert-danger">Failed to update the HumanNamePlaceholder (@ErrorMessage).</div>
+    <div class="alert alert-danger">Failed to update the Card Waste (@ErrorMessage).</div>
 }
 
 @code {
     /// <summary>
-    /// Id of HumanNamePlaceholder to edit
+    /// Id of Card Waste to edit
     /// </summary>
     [Parameter]
     public Guid CardWasteId { get; set; }
@@ -157,7 +157,7 @@ else
 
             if (dbValues is null)
             {
-                // deleted - show HumanNamePlaceholder not found
+                // deleted - show Card Waste not found
                 Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{CardWaste.Id}");
                 return;
             }
