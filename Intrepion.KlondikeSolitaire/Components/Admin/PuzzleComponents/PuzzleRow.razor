@@ -29,6 +29,7 @@
         @if (!DeleteConfirmation)
         {
             <div class="col-3">@CurrentPuzzle?.IsPublic</div>
+            <div class="col-3">@CurrentPuzzle?.PublishTime</div>
             @* RowColumnCodePlaceholder *@
         }
         else
