@@ -11,5 +11,6 @@ public class Foundation
     public int PileIndex { get; set; }
     public Puzzle? PuzzleId { get; set; }
     public Suit? SuitId { get; set; }
+    public ICollection<CardFoundation> CardFoundations { get; set; } = [];
     // ActualPropertyPlaceholder
 }
