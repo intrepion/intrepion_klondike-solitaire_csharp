@@ -1,6 +1,6 @@
-﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.StatusGrid;
 
-public enum EntityNamePlaceholderFilterColumns
+public enum StatusFilterColumns
 {
     Id,
 
