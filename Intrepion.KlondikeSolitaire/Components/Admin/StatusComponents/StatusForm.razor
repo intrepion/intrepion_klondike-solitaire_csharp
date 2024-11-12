@@ -1,9 +1,9 @@
-<h1>@Mode EntityNamePlaceholder</h1>
+<h1>@Mode Status</h1>
 
 <hr />
-@if (EntityNamePlaceholder is not null)
+@if (Status is not null)
 {
-    <EditForm Model="EntityNamePlaceholder" OnInvalidSubmit="(async () => await HandleSubmitAsync(false))" OnValidSubmit="(async () => await HandleSubmitAsync(true))">
+    <EditForm Model="Status" OnInvalidSubmit="(async () => await HandleSubmitAsync(false))" OnValidSubmit="(async () => await HandleSubmitAsync(true))">
         <DataAnnotationsValidator />
         <ValidationSummary />
 
@@ -32,13 +32,13 @@
     [Parameter]
     public bool IsAdd { get; set; }
 
-    // The EntityNamePlaceholder to upsert.
+    // The Status to upsert.
     [Parameter]
-    public EntityNamePlaceholder? EntityNamePlaceholder { get; set; }
+    public Status? Status { get; set; }
 
-    // The database version of EntityNamePlaceholder if a concurrency issue.
+    // The database version of Status if a concurrency issue.
     [Parameter]
-    public EntityNamePlaceholder? DbEntityNamePlaceholder { get; set; }
+    public Status? DbStatus { get; set; }
 
     // Prevent multiple asynchronous operations at the same time.
     [Parameter]
