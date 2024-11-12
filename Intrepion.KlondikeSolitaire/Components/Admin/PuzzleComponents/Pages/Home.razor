@@ -48,6 +48,10 @@
                 <SortIndicator Column="@(PuzzleFilterColumns.Description)" />&nbsp;Description
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(PuzzleFilterColumns.IsPublic))">
+                <SortIndicator Column="@(PuzzleFilterColumns.IsPublic)" />&nbsp;IsPublic
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
