@@ -208,6 +208,7 @@ entity Move {
     Card2Id : Card
     Card3Id : Card
     FromPileTypeId : PileType
+    GameId : Game
     ' MoveKeyCodePlaceholder
     --
     FromPileIndex : int
