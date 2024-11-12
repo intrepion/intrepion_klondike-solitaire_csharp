@@ -150,6 +150,15 @@ entity CardTableau {
     ' CardTableauPropertyCodePlaceholder
 }
 
+entity CardWaste {
+    Id : Guid
+    --
+    ApplicationUserUpdatedBy : ApplicationUser
+    ' CardWasteKeyCodePlaceholder
+    --
+    ' CardWastePropertyCodePlaceholder
+}
+
 ' EntityCodePlaceholder
 
 ApplicationRole ||--o{ ApplicationUserRole
