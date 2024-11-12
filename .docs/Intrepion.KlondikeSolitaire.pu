@@ -310,6 +310,7 @@ entity Tableau {
     GameId : Game
     ' TableauKeyCodePlaceholder
     --
+    PileIndex : int
     ' TableauPropertyCodePlaceholder
 }
 
