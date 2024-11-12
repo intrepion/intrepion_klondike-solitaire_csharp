@@ -122,6 +122,9 @@ builder.Services.AddScoped<RankGridQueryAdapter>();
 builder.Services.AddScoped<IStatusFilters, StatusGridControls>();
 builder.Services.AddScoped<StatusGridQueryAdapter>();
 
+builder.Services.AddScoped<ISuitFilters, SuitGridControls>();
+builder.Services.AddScoped<SuitGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
