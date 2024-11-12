@@ -17,6 +17,7 @@ public class TableauGridQueryAdapter
         {
             { TableauFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { TableauFilterColumns.PileIndex, x => x != null ? x.PileIndex.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
