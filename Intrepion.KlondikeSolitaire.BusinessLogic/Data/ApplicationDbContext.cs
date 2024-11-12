@@ -16,6 +16,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Game> Games { get; set; }
     public DbSet<Move> Moves { get; set; }
     public DbSet<PileType> PileTypes { get; set; }
+    public DbSet<Player> Players { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
