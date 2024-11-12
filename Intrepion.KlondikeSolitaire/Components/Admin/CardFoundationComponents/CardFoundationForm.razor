@@ -7,6 +7,13 @@
         <DataAnnotationsValidator />
         <ValidationSummary />
 
+        <h2>Ordering</h2>
+        <p>
+            <label>
+                Ordering:
+                <InputNumber @bind-Value="CardFoundation.Ordering" @oninput="HandleOrderingChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
