@@ -36,6 +36,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new CardWasteEtc().Configure(builder.Entity<CardWaste>());
         new FoundationEtc().Configure(builder.Entity<Foundation>());
         new GameEtc().Configure(builder.Entity<Game>());
+        new MoveEtc().Configure(builder.Entity<Move>());
         // EntityTypeCfgCodePlaceholder
     }
 }
