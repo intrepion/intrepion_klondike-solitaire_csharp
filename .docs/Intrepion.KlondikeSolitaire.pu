@@ -133,6 +133,7 @@ entity CardStock {
     PuzzleId : Puzzle
     ' CardStockKeyCodePlaceholder
     --
+    Ordering : int
     ' CardStockPropertyCodePlaceholder
 }
 
