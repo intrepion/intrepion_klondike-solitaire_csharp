@@ -7,6 +7,13 @@
         <DataAnnotationsValidator />
         <ValidationSummary />
 
+        <h2>Pile Index</h2>
+        <p>
+            <label>
+                Pile Index:
+                <InputNumber @bind-Value="Foundation.PileIndex" @oninput="HandlePileIndexChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
