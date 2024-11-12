@@ -44,6 +44,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new PileTypeEtc().Configure(builder.Entity<PileType>());
         new PlayerEtc().Configure(builder.Entity<Player>());
         new PuzzleEtc().Configure(builder.Entity<Puzzle>());
+        new RankEtc().Configure(builder.Entity<Rank>());
         // EntityTypeCfgCodePlaceholder
     }
 }
