@@ -158,6 +158,7 @@ CardFoundation }o--|| Foundation
 CardStock }o--|| ApplicationUser
 CardStock }o--|| Card
 CardStock }o--|| Game
+CardStock }o--|| Puzzle
 ' RelationshipCodePlaceholder
 
 @enduml
