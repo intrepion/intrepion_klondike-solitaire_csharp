@@ -305,6 +305,7 @@ PileType }o--|| ApplicationUser
 Player }o--|| ApplicationUser
 Player }o--|| ApplicationUser
 Puzzle }o--|| ApplicationUser
+Puzzle }o--|| Player
 ' RelationshipCodePlaceholder
 
 @enduml
