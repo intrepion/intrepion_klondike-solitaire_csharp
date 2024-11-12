@@ -39,6 +39,7 @@ entity ApplicationUser {
     UpdatedCardTableaus : ICollection<CardTableau>
     UpdatedCardWastes : ICollection<CardWaste>
     UpdatedFoundations : ICollection<Foundation>
+    UpdatedGames : ICollection<Game>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
