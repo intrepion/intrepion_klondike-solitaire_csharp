@@ -30,5 +30,6 @@ public class ApplicationUser : IdentityUser<Guid>
     public ICollection<Rank> UpdatedRanks { get; set; } = [];
     public ICollection<Status> UpdatedStatuses { get; set; } = [];
     public ICollection<Suit> UpdatedSuits { get; set; } = [];
+    public ICollection<Tableau> UpdatedTableaus { get; set; } = [];
     // ActualPropertyPlaceholder
 }
