@@ -4,7 +4,7 @@
 {
     <div class="row Game-detail">
         <div class="col-2 text-right">
-            <a title="Edit" href="admin/UrlNamePlaceholder/edit/@CurrentGame.Id" style="text-decoration:none">
+            <a title="Edit" href="admin/game/edit/@CurrentGame.Id" style="text-decoration:none">
                 &nbsp;📝&nbsp;
             </a>
             @if (CanDelete)
@@ -70,7 +70,7 @@
         !DeleteConfirmation && (Wrapper?.DeleteRequestId.Equals(Guid.Empty) == true || Wrapper?.DeleteRequestId.Equals(CurrentGame?.Id) == true);
 
     // Navigate to view.
-    private string ViewLink => $"admin/UrlNamePlaceholder/view/{CurrentGame?.Id}";
+    private string ViewLink => $"admin/game/view/{CurrentGame?.Id}";
 
     // Confirm the delete.
     private bool DeleteConfirmation { get; set; }
