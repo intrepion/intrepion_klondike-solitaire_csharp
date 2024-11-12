@@ -12,5 +12,6 @@ public class Move
     public Card? Card3Id { get; set; }
     public int FromPileIndex { get; set; }
     public PileType? FromPileTypeId { get; set; }
+    public Game? GameId { get; set; }
     // ActualPropertyPlaceholder
 }
