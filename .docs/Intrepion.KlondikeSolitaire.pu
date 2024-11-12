@@ -212,6 +212,7 @@ entity Move {
     ' MoveKeyCodePlaceholder
     --
     FromPileIndex : int
+    MoveTime : DateTime
     ' MovePropertyCodePlaceholder
 }
 
