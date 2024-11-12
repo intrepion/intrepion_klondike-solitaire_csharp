@@ -2,7 +2,7 @@
 
 namespace ApplicationNamePlaceholder.BusinessLogic.Entities;
 
-public class EntityNamePlaceholder
+public class CardTableau
 {
     public ApplicationUser? ApplicationUserUpdatedBy { get; set; }
     public Guid Id { get; set; }
