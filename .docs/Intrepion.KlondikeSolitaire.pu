@@ -250,6 +250,7 @@ entity Puzzle {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    CreatorId : Player
     ' PuzzleKeyCodePlaceholder
     --
     ' PuzzlePropertyCodePlaceholder
