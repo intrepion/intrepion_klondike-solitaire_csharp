@@ -17,6 +17,7 @@ public class PileTypeGridQueryAdapter
         {
             { PileTypeFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { PileTypeFilterColumns.Name, x => x != null && x.Name != null ? x.Name : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
