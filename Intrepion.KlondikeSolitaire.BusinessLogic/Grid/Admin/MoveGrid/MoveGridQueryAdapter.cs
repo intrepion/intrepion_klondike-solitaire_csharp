@@ -17,6 +17,7 @@ public class MoveGridQueryAdapter
         {
             { MoveFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { MoveFilterColumns.FromPileIndex, x => x != null ? x.FromPileIndex.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
