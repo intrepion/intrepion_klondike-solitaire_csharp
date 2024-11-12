@@ -38,6 +38,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new FoundationEtc().Configure(builder.Entity<Foundation>());
         new GameEtc().Configure(builder.Entity<Game>());
         new MoveEtc().Configure(builder.Entity<Move>());
+        new PileTypeEtc().Configure(builder.Entity<PileType>());
         // EntityTypeCfgCodePlaceholder
     }
 }
