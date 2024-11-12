@@ -293,6 +293,7 @@ entity Suit {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    Cards : ICollection<Card>
     ' SuitKeyCodePlaceholder
     --
     Code : string
