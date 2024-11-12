@@ -190,6 +190,7 @@ CardTableau }o--|| Card
 CardTableau }o--|| Tableau
 CardWaste }o--|| ApplicationUser
 CardWaste }o--|| Card
+CardWaste }o--|| Game
 ' RelationshipCodePlaceholder
 
 @enduml
