@@ -21,6 +21,13 @@
                 <InputCheckbox @bind-Value="Puzzle.IsPublic" @oninput="HandleIsPublicChange"/>
             </label>
         </p>
+        <h2>Name</h2>
+        <p>
+            <label>
+                Name:
+                <InputText @bind-Value="Puzzle.Name" @oninput="HandleNameChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
