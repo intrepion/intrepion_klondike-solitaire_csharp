@@ -7,5 +7,6 @@ public class Game
     public ApplicationUser? ApplicationUserUpdatedBy { get; set; }
     public Guid Id { get; set; }
 
+    public DateTime EndTime { get; set; }
     // ActualPropertyPlaceholder
 }
