@@ -9,5 +9,6 @@ public class CardFoundation
 
     public Card? Card { get; set; }
     public Foundation? Foundation { get; set; }
+    public int Ordering { get; set; }
     // ActualPropertyPlaceholder
 }
