@@ -1,4 +1,4 @@
-﻿namespace ApplicationNamePlaceholder.BusinessLogic.Grid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid;
 
 public interface IPageHelper
 {

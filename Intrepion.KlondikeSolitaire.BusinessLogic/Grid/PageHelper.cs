@@ -1,4 +1,4 @@
-﻿namespace ApplicationNamePlaceholder.BusinessLogic.Grid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid;
 
 // Holds the state for paging.
 public class PageHelper : IPageHelper
