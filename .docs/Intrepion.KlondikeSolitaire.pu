@@ -294,6 +294,7 @@ entity Suit {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     Cards : ICollection<Card>
+    Foundations : ICollection<Foundation>
     ' SuitKeyCodePlaceholder
     --
     Code : string
