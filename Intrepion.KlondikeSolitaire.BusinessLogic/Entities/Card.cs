@@ -8,5 +8,6 @@ public class Card
     public Guid Id { get; set; }
 
     public Rank? RankId { get; set; }
+    public Suit? SuitId { get; set; }
     // ActualPropertyPlaceholder
 }
