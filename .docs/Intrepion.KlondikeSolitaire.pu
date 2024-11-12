@@ -172,6 +172,7 @@ entity Foundation {
     GameId : Game
     ' FoundationKeyCodePlaceholder
     --
+    PileIndex : int
     ' FoundationPropertyCodePlaceholder
 }
 
