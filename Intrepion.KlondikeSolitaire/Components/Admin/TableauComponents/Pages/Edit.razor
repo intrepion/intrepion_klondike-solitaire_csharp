@@ -1,4 +1,4 @@
-@page "/admin/UrlNamePlaceholder/edit/{TableauId:guid}"
+@page "/admin/tableau/edit/{TableauId:guid}"
 @rendermode InteractiveServer
 @implements IDisposable
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
@@ -143,7 +143,7 @@ else
 
             EditSuccessState.Success = true;
             // go to view to see the record
-            Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{Tableau.Id}");
+            Navigation.NavigateTo($"/admin/tableau/view/{Tableau.Id}");
         }
         catch (DbUpdateConcurrencyException dbex)
         {
@@ -158,7 +158,7 @@ else
             if (dbValues is null)
             {
                 // deleted - show Tableau not found
-                Navigation.NavigateTo($"/admin/UrlNamePlaceholder/view/{Tableau.Id}");
+                Navigation.NavigateTo($"/admin/tableau/view/{Tableau.Id}");
                 return;
             }
 
@@ -186,7 +186,7 @@ else
     private void Cancel()
     {
         Busy = true;
-        Navigation.NavigateTo($"/admin/UrlNamePlaceholder/{PageHelper.Page}");
+        Navigation.NavigateTo($"/admin/tableau/{PageHelper.Page}");
     }
 
     /// <summary>
