@@ -238,6 +238,7 @@ entity Player {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     ApplicationUserId : ApplicationUser
+    Games : ICollection<Game>
     ' PlayerKeyCodePlaceholder
     --
     ' PlayerPropertyCodePlaceholder
