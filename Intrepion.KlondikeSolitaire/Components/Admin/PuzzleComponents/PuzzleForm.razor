@@ -14,6 +14,13 @@
                 <InputText @bind-Value="Puzzle.Description" @oninput="HandleDescriptionChange"/>
             </label>
         </p>
+        <h2>Is Public</h2>
+        <p>
+            <label>
+                Is Public:
+                <InputCheckbox @bind-Value="Puzzle.IsPublic" @oninput="HandleIsPublicChange"/>
+            </label>
+        </p>
         @* PropertyFormCodePlaceholder *@
 
         <br />
