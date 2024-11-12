@@ -9,5 +9,6 @@ public class Move
 
     public Card? Card1Id { get; set; }
     public Card? Card2Id { get; set; }
+    public Card? Card3Id { get; set; }
     // ActualPropertyPlaceholder
 }
