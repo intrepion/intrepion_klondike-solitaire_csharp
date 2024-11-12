@@ -14,7 +14,7 @@ public partial class CardTableauAdminPages : PageTest
         var faker = new Faker();
         var aRandomString = faker.Random.String2(10);
         var someRandomString = faker.Random.String2(10);
-        await Page.GetByTestId("LowercaseNamePlaceholderNavLink").ClickAsync();
+        await Page.GetByTestId("cardTableauNavLink").ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Card Tableau Home");
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Card Tableau Add");
