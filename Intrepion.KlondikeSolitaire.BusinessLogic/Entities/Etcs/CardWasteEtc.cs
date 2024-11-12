@@ -13,6 +13,9 @@ public class CardWasteEtc : IEntityTypeConfiguration<CardWaste>
             .WithMany(x => x.UpdatedCardWastes)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(x => x.CardId)
+            .WithMany(x => x.CardWastes)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
