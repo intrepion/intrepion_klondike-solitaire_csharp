@@ -16,6 +16,9 @@ public class GameEtc : IEntityTypeConfiguration<Game>
         builder.HasOne(x => x.PlayerId)
             .WithMany(x => x.Games)
             .OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(x => x.PuzzleId)
+            .WithMany(x => x.Games)
+            .OnDelete(DeleteBehavior.Restrict);
         // EntityConfigurationCodePlaceholder
     }
 }
