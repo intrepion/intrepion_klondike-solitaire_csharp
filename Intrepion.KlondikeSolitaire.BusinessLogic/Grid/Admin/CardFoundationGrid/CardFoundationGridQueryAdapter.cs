@@ -17,6 +17,7 @@ public class CardFoundationGridQueryAdapter
         {
             { CardFoundationFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { CardFoundationFilterColumns.Ordering, x => x != null ? x.Ordering.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
