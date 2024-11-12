@@ -11,5 +11,6 @@ public class Card
     public Suit? SuitId { get; set; }
     public ICollection<CardFoundation> CardFoundations { get; set; } = [];
     public ICollection<CardStock> CardStocks { get; set; } = [];
+    public ICollection<CardTableau> CardTableaus { get; set; } = [];
     // ActualPropertyPlaceholder
 }
