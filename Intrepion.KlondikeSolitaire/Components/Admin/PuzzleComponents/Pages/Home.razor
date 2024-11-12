@@ -56,6 +56,10 @@
                 <SortIndicator Column="@(PuzzleFilterColumns.Name)" />&nbsp;Name
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(PuzzleFilterColumns.PublishTime))">
+                <SortIndicator Column="@(PuzzleFilterColumns.PublishTime)" />&nbsp;PublishTime
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
