@@ -1,9 +1,9 @@
-﻿using ApplicationNamePlaceholder.BusinessLogic.Entities;
-using ApplicationNamePlaceholder.BusinessLogic.Entities.Configuration;
+﻿using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Entities.Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Data;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Data;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser, ApplicationRole, Guid, ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin, ApplicationRoleClaim, ApplicationUserToken>(options)
 {

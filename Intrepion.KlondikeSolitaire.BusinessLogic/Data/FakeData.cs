@@ -1,16 +1,16 @@
 ﻿using Bogus;
-using ApplicationNamePlaceholder.BusinessLogic.Entities;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ApplicationNamePlaceholder.BusinessLogic.Data;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Data;
 
 public static class FakeData
 {
     public static async Task SeedAsync(ApplicationDbContext applicationDbContext, IServiceProvider serviceProvider)
     {
         var adminName = "Admin";
-        var adminUserPass = adminName + "1@ApplicationNamePlaceholder.com";
+        var adminUserPass = adminName + "1@Intrepion.KlondikeSolitaire.com";
         var adminUser = (await applicationDbContext.Users.AddAsync(new ApplicationUser
         {
             Email = adminUserPass,
