@@ -1,4 +1,4 @@
-﻿@inject IEntityNamePlaceholderFilters Filters
+﻿@inject ICardFilters Filters
 
 @if (Column == Filters.SortColumn)
 {
@@ -10,9 +10,9 @@ else
 }
 
 @code {
-    // Sets which EntityNamePlaceholderFilterColumns this indicator is for.
+    // Sets which CardFilterColumns this indicator is for.
     [Parameter]
-    public EntityNamePlaceholderFilterColumns Column { get; set; }
+    public CardFilterColumns Column { get; set; }
 
     // The symbol to render.
     private string SortSymbol => Filters.SortAscending ? "🔼" : "🔽";
