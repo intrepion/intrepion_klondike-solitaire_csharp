@@ -13,6 +13,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<CardTableau> CardTableaus { get; set; }
     public DbSet<CardWaste> CardWastes { get; set; }
     public DbSet<Foundation> Foundations { get; set; }
+    public DbSet<Game> Games { get; set; }
     // DbSetCodePlaceholder
 
     protected override void OnModelCreating(ModelBuilder builder)
