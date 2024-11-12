@@ -130,6 +130,7 @@ entity CardStock {
     ApplicationUserUpdatedBy : ApplicationUser
     CardId : Card
     GameId : Game
+    PuzzleId : Puzzle
     ' CardStockKeyCodePlaceholder
     --
     ' CardStockPropertyCodePlaceholder
