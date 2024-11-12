@@ -24,6 +24,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         new ApplicationUserTokenEtc().Configure(builder.Entity<ApplicationUserToken>());
 
         new CardEtc().Configure(builder.Entity<Card>());
+        new CardFoundationEtc().Configure(builder.Entity<CardFoundation>());
         // EntityTypeCfgCodePlaceholder
     }
 }
