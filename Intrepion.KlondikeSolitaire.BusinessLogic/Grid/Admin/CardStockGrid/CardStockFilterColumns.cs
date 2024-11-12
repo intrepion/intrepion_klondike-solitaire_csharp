@@ -4,5 +4,6 @@ public enum CardStockFilterColumns
 {
     Id,
 
+    Ordering,
     // FilterColumnCodePlaceholder
 }
