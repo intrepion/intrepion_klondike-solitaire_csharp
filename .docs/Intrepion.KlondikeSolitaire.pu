@@ -188,6 +188,7 @@ CardTableau }o--|| ApplicationUser
 CardTableau }o--|| Card
 CardTableau }o--|| Tableau
 CardWaste }o--|| ApplicationUser
+CardWaste }o--|| Card
 ' RelationshipCodePlaceholder
 
 @enduml
