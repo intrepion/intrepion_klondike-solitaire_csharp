@@ -40,6 +40,7 @@ entity ApplicationUser {
     UpdatedCardWastes : ICollection<CardWaste>
     UpdatedFoundations : ICollection<Foundation>
     UpdatedGames : ICollection<Game>
+    UpdatedMoves : ICollection<Move>
     ' ApplicationUserKeyCodePlaceholder
     --
     AccessFailedCount : int
