@@ -172,6 +172,7 @@ entity Foundation {
     GameId : Game
     PuzzleId : Puzzle
     SuitId : Suit
+    CardFoundations : ICollection<CardFoundation>
     ' FoundationKeyCodePlaceholder
     --
     PileIndex : int
