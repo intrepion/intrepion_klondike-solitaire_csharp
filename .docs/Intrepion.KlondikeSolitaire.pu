@@ -213,6 +213,7 @@ entity Move {
     --
     FromPileIndex : int
     MoveTime : DateTime
+    ToPileIndex : int
     ' MovePropertyCodePlaceholder
 }
 
