@@ -114,6 +114,9 @@ builder.Services.AddScoped<PlayerGridQueryAdapter>();
 builder.Services.AddScoped<IPuzzleFilters, PuzzleGridControls>();
 builder.Services.AddScoped<PuzzleGridQueryAdapter>();
 
+builder.Services.AddScoped<IRankFilters, RankGridControls>();
+builder.Services.AddScoped<RankGridQueryAdapter>();
+
 // RegisterServerServiceCodePlaceholder
 
 var app = builder.Build();
