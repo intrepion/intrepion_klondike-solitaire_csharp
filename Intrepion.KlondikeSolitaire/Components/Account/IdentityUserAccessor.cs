@@ -1,5 +1,5 @@
+﻿using Intrepion.KlondikeSolitaire.Data;
 using Microsoft.AspNetCore.Identity;
-using Intrepion.KlondikeSolitaire.Data;
 
 namespace Intrepion.KlondikeSolitaire.Components.Account;
 
