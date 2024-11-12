@@ -8,5 +8,6 @@ public class CardTableau
     public Guid Id { get; set; }
 
     public Card? CardId { get; set; }
+    public Tableau? TableauId { get; set; }
     // ActualPropertyPlaceholder
 }
