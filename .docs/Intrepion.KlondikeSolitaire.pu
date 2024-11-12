@@ -206,6 +206,7 @@ entity Move {
     ApplicationUserUpdatedBy : ApplicationUser
     Card1Id : Card
     Card2Id : Card
+    Card3Id : Card
     ' MoveKeyCodePlaceholder
     --
     ' MovePropertyCodePlaceholder
