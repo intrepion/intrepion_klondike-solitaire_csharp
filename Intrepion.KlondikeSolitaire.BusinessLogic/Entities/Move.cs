@@ -8,5 +8,6 @@ public class Move
     public Guid Id { get; set; }
 
     public Card? Card1Id { get; set; }
+    public Card? Card2Id { get; set; }
     // ActualPropertyPlaceholder
 }
