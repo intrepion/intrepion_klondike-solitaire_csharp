@@ -251,6 +251,7 @@ entity Puzzle {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     CreatorId : Player
+    CardStocks : ICollection<CardStock>
     ' PuzzleKeyCodePlaceholder
     --
     Description : string
