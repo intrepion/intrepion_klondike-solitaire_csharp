@@ -142,6 +142,7 @@ entity CardTableau {
     Id : Guid
     --
     ApplicationUserUpdatedBy : ApplicationUser
+    CardId : Card
     ' CardTableauKeyCodePlaceholder
     --
     ' CardTableauPropertyCodePlaceholder
