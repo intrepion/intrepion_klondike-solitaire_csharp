@@ -19,6 +19,7 @@ public partial class PuzzleAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Create New" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Puzzle Add");
 
+        await Page.GetByLabel("Description:", new() { Exact = true }).FillAsync("aDescription" + aRandomString);
         // CreatePropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
