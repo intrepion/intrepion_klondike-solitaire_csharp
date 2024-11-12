@@ -209,6 +209,7 @@ CardWaste }o--|| Game
 CardWaste }o--|| Puzzle
 Foundation }o--|| ApplicationUser
 Foundation }o--|| Game
+Foundation }o--|| Puzzle
 ' RelationshipCodePlaceholder
 
 @enduml
