@@ -44,6 +44,10 @@
                 <SortIndicator Column="@(MoveFilterColumns.Id)" />&nbsp;Id
             </div>
 
+            <div class="col-3" @onclick="@(async ()=>await ToggleAsync(MoveFilterColumns.FromPileIndex))">
+                <SortIndicator Column="@(MoveFilterColumns.FromPileIndex)" />&nbsp;FromPileIndex
+            </div>
+
             @* SortIndicatorCodePlaceholder *@
 
         </div>
