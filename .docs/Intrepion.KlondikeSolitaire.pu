@@ -129,6 +129,7 @@ entity CardStock {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     CardId : Card
+    GameId : Game
     ' CardStockKeyCodePlaceholder
     --
     ' CardStockPropertyCodePlaceholder
