@@ -295,6 +295,7 @@ entity Suit {
     ApplicationUserUpdatedBy : ApplicationUser
     ' SuitKeyCodePlaceholder
     --
+    Code : string
     ' SuitPropertyCodePlaceholder
 }
 
