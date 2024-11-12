@@ -119,6 +119,7 @@ entity CardFoundation {
     Foundation : Foundation
     ' CardFoundationKeyCodePlaceholder
     --
+    Ordering : int
     ' CardFoundationPropertyCodePlaceholder
 }
 
