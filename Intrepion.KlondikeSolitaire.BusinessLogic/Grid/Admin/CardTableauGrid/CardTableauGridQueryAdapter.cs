@@ -17,6 +17,7 @@ public class CardTableauGridQueryAdapter
         {
             { CardTableauFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { CardTableauFilterColumns.Ordering, x => x != null ? x.Ordering.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
