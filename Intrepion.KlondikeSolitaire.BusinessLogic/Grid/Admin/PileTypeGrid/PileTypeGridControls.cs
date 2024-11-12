@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PileTypeGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PileTypeGrid;
 
 // State of grid filters.
 public class PileTypeGridControls(IPageHelper pageHelper) : IPileTypeFilters

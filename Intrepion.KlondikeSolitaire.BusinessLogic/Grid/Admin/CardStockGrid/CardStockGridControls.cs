@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardStockGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardStockGrid;
 
 // State of grid filters.
 public class CardStockGridControls(IPageHelper pageHelper) : ICardStockFilters

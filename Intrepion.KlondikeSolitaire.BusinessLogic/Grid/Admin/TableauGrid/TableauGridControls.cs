@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.TableauGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.TableauGrid;
 
 // State of grid filters.
 public class TableauGridControls(IPageHelper pageHelper) : ITableauFilters

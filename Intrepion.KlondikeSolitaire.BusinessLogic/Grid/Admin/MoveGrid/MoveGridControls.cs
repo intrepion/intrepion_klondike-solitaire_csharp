@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.MoveGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.MoveGrid;
 
 // State of grid filters.
 public class MoveGridControls(IPageHelper pageHelper) : IMoveFilters

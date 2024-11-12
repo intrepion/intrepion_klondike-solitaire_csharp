@@ -3,9 +3,8 @@ using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationRoleGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationUserGrid;
-
-using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardFoundationGrid;
+using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardStockGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardTableauGrid;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.CardWasteGrid;

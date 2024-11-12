@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.FoundationGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.FoundationGrid;
 
 // State of grid filters.
 public class FoundationGridControls(IPageHelper pageHelper) : IFoundationFilters

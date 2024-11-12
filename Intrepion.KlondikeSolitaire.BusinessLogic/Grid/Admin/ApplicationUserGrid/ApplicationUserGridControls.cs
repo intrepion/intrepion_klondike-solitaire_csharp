@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationUserGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.ApplicationUserGrid;
 
 // State of grid filters.
 public class ApplicationUserGridControls(IPageHelper pageHelper) : IApplicationUserFilters

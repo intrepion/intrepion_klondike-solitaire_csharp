@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.StatusGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.StatusGrid;
 
 // State of grid filters.
 public class StatusGridControls(IPageHelper pageHelper) : IStatusFilters

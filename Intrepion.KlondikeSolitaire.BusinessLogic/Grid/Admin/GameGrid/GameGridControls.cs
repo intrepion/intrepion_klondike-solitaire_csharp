@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.GameGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.GameGrid;
 
 // State of grid filters.
 public class GameGridControls(IPageHelper pageHelper) : IGameFilters

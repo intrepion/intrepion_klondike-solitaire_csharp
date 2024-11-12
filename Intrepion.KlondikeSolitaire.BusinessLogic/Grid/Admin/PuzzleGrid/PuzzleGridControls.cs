@@ -1,4 +1,4 @@
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PuzzleGrid;
+﻿namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PuzzleGrid;
 
 // State of grid filters.
 public class PuzzleGridControls(IPageHelper pageHelper) : IPuzzleFilters
