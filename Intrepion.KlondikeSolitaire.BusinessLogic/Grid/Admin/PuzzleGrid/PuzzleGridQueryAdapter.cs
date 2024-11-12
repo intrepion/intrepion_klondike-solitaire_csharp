@@ -3,29 +3,29 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Intrepion.KlondikeSolitaire.BusinessLogic.Entities;
 
-namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.EntityNamePlaceholderGrid;
+namespace Intrepion.KlondikeSolitaire.BusinessLogic.Grid.Admin.PuzzleGrid;
 
 // Creates the correct expressions to filter and sort.
-public class EntityNamePlaceholderGridQueryAdapter
+public class PuzzleGridQueryAdapter
 {
     // Holds state of the grid.
-    private readonly IEntityNamePlaceholderFilters controls;
+    private readonly IPuzzleFilters controls;
 
     // Expressions for sorting.
-    private readonly Dictionary<EntityNamePlaceholderFilterColumns, Expression<Func<EntityNamePlaceholder, string>>> expressions =
+    private readonly Dictionary<PuzzleFilterColumns, Expression<Func<Puzzle, string>>> expressions =
         new()
         {
-            { EntityNamePlaceholderFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
+            { PuzzleFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
             // SortExpressionCodePlaceholder
         };
 
     // Queryables for filtering.
-    private readonly Dictionary<EntityNamePlaceholderFilterColumns, Func<IQueryable<EntityNamePlaceholder>, IQueryable<EntityNamePlaceholder>>> filterQueries = [];
+    private readonly Dictionary<PuzzleFilterColumns, Func<IQueryable<Puzzle>, IQueryable<Puzzle>>> filterQueries = [];
 
     // Creates a new instance of the GridQueryAdapter class.
-    // controls: The IEntityNamePlaceholderFilters" to use.
-    public EntityNamePlaceholderGridQueryAdapter(IEntityNamePlaceholderFilters controls)
+    // controls: The IPuzzleFilters" to use.
+    public PuzzleGridQueryAdapter(IPuzzleFilters controls)
     {
         this.controls = controls;
 
@@ -33,16 +33,16 @@ public class EntityNamePlaceholderGridQueryAdapter
         filterQueries =
             new()
             {
-                { EntityNamePlaceholderFilterColumns.Id, x => x.Where(y => y != null && !y.Id.Equals(Guid.Empty) && this.controls.FilterText != null && y.Id.ToString().Contains(this.controls.FilterText) ) },
+                { PuzzleFilterColumns.Id, x => x.Where(y => y != null && !y.Id.Equals(Guid.Empty) && this.controls.FilterText != null && y.Id.ToString().Contains(this.controls.FilterText) ) },
 
                 // QueryExpressionCodePlaceholder
             };
     }
 
     // Uses the query to return a count and a page.
-    // query: The IQueryable{EntityNamePlaceholder} to work from.
-    // Returns the resulting ICollection{EntityNamePlaceholder}.
-    public async Task<ICollection<EntityNamePlaceholder>> FetchAsync(IQueryable<EntityNamePlaceholder> query)
+    // query: The IQueryable{Puzzle} to work from.
+    // Returns the resulting ICollection{Puzzle}.
+    public async Task<ICollection<Puzzle>> FetchAsync(IQueryable<Puzzle> query)
     {
         query = FilterAndQuery(query);
         await CountAsync(query);
@@ -52,23 +52,23 @@ public class EntityNamePlaceholderGridQueryAdapter
     }
 
     // Get total filtered items count.
-    // query: The IQueryable{EntityNamePlaceholder} to use.
-    public async Task CountAsync(IQueryable<EntityNamePlaceholder> query) =>
+    // query: The IQueryable{Puzzle} to use.
+    public async Task CountAsync(IQueryable<Puzzle> query) =>
         controls.PageHelper.TotalItemCount = await query.CountAsync();
 
     // Build the query to bring back a single page.
-    // query: The <see IQueryable{EntityNamePlaceholder} to modify.
-    // Returns the new IQueryable{EntityNamePlaceholder} for a page.
-    public IQueryable<EntityNamePlaceholder> FetchPageQuery(IQueryable<EntityNamePlaceholder> query) =>
+    // query: The <see IQueryable{Puzzle} to modify.
+    // Returns the new IQueryable{Puzzle} for a page.
+    public IQueryable<Puzzle> FetchPageQuery(IQueryable<Puzzle> query) =>
         query
             .Skip(controls.PageHelper.Skip)
             .Take(controls.PageHelper.PageSize)
             .AsNoTracking();
 
     // Builds the query.
-    // root: The IQueryable{EntityNamePlaceholder} to start with.
-    // Returns the resulting IQueryable{EntityNamePlaceholder} with sorts and filters applied.
-    private IQueryable<EntityNamePlaceholder> FilterAndQuery(IQueryable<EntityNamePlaceholder> root)
+    // root: The IQueryable{Puzzle} to start with.
+    // Returns the resulting IQueryable{Puzzle} with sorts and filters applied.
+    private IQueryable<Puzzle> FilterAndQuery(IQueryable<Puzzle> root)
     {
         var sb = new System.Text.StringBuilder();
 
