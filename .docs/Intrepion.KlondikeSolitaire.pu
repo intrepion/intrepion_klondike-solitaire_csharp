@@ -116,6 +116,7 @@ entity CardFoundation {
     --
     ApplicationUserUpdatedBy : ApplicationUser
     Card : Card
+    Foundation : Foundation
     ' CardFoundationKeyCodePlaceholder
     --
     ' CardFoundationPropertyCodePlaceholder
