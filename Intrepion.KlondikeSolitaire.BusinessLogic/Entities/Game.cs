@@ -13,5 +13,6 @@ public class Game
     public DateTime StartTime { get; set; }
     public Status? StatusId { get; set; }
     public ICollection<CardStock> CardStocks { get; set; } = [];
+    public ICollection<CardWaste> CardWastes { get; set; } = [];
     // ActualPropertyPlaceholder
 }
