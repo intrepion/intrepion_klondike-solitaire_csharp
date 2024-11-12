@@ -27,6 +27,7 @@ public partial class CardStockAdminPages : PageTest
         await Page.GetByRole(AriaRole.Link, new() { Name = "Edit" }).ClickAsync();
         await Expect(Page).ToHaveTitleAsync("Card Stock Edit");
 
+        await Page.GetByLabel("Ordering:", new() { Exact = true }).FillAsync("2");
         // ModifyPropertyCodePlaceholder
 
         await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
