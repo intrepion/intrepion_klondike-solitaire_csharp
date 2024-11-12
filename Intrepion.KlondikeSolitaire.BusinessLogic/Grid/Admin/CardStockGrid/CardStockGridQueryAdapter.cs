@@ -17,6 +17,7 @@ public class CardStockGridQueryAdapter
         {
             { CardStockFilterColumns.Id, x => !x.Id.Equals(Guid.Empty) ? x.Id.ToString() : string.Empty },
 
+            { CardStockFilterColumns.Ordering, x => x != null ? x.Ordering.ToString() : string.Empty },
             // SortExpressionCodePlaceholder
         };
 
