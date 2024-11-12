@@ -8,5 +8,6 @@ public class CardStock
     public Guid Id { get; set; }
 
     public Card? CardId { get; set; }
+    public Game? GameId { get; set; }
     // ActualPropertyPlaceholder
 }
